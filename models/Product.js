@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const productSchema = Schema({
     name: String,
+    tagName: String,
     stock: Number,
     price: Number,
     title: String,
@@ -15,6 +16,7 @@ const productSchema = Schema({
     },
     additional: String,
     colors: [{
+        name: String,
         color: String,
         buffer: Buffer
     }]
