@@ -4,26 +4,55 @@ const favicon = require('serve-favicon');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const admin = require('./routes/admin');
 
 const app = express();
 
+// db config
+mongoose.connect('mongodb://localhost/revelry');
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+    console.log('connected to db');
+});
+
+// session config
+app.use(session({
+    secret: 'bill murray',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+    store: new MongoStore({ mongooseConnection: db })
+}));
+
+// make session / user data available to templates
+app.use((req, res, next) => {
+    res.locals.title = 'Revelry Supply';
+    res.locals.user = req.session.user;
+    next();
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// middleware config
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// route config
 app.use('/', index);
 app.use('/users', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
