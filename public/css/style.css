@@ -1,0 +1,101 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: #000;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+
+/* ---- Layout Containers ---- */
+
+nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-nav {
+    margin-top: 5px;
+    flex: 1 100%;
+}
+
+
+/* ---- Navigation ---- */
+
+.name {
+    font-size: 1.35em;
+    margin: 0;
+}
+
+.name a, .main-nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 40px;
+    color: #fff;
+}
+
+nav button.toggleNav {
+  margin-right: 10px;
+  color: #000;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  align-self: center;
+}
+
+/* =================================
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+    nav, .main-nav {
+        display: flex;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1025px) {
+    nav, .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-nav {
+      flex: 0;
+    }
+}
+
+/* =================================
+  Functional Tags
+==================================== */
+
+.active-link {
+  background-color: #363636;
+}
