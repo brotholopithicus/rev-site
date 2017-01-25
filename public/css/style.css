@@ -1,15 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
 * {
   box-sizing: border-box;
 }
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', 'Lato', sans-serif;
 }
 
 nav a {
     text-transform: uppercase;
 }
 
+a {
+  text-decoration: none;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand img {
+  height: 34px;
+}
+a:hover {
+  text-decoration: none;
+}
 #main-container {
     margin-top: 4rem;
 }
@@ -42,4 +54,31 @@ nav a {
 }
 .product-categories .product img {
   margin: 1rem auto;
+}
+
+.exploits-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+a.exploit {
+  height: 325px;
+  width: 494px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: 100px;
+}
+
+a.exploit p {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0 3px 20px rgba(0,0,0,0.8), 0 5px 5px rgba(0,0,0,0.6);
+  margin: 0 auto;
+  z-index: 10;
+}
+a.exploit:hover {
 }
