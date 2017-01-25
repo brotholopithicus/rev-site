@@ -1,13 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
+* {
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 nav a {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 #main-container {
-  margin-top: 4rem;
+    margin-top: 4rem;
+}
+
+.product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product {
+  border: 1px solid #3d3d3d;
+  border-radius: 4px;
+  display: flex;
+  width: 175px;
+  margin: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+.product.active {
+  border-color: #000000;
+  background-color: #e6e6e6;
+  color: #000;
+  text-shadow: 0px 1px 0px 4px rgba(0, 0, 0, 0.5);
+}
+.product-categories .product p {
+  text-align: center;
+}
+.product-categories .product img {
+  margin: 1rem auto;
 }

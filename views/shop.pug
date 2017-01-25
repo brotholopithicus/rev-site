@@ -1,10 +1,31 @@
 extends layout
 
 block content
+    .product-categories
+        .product(data-product='all').active
+            img(src='/img/svg/logo.svg', width="50", height="100")
+            p All
+        .product(data-product='accomplice')
+            img(src='/img/svg/accomplice.svg', width="100", height="100")
+            p Accomplice
+        .product(data-product='confidant')
+            img(src='/img/svg/confidant.svg', width="100", height="100")
+            p Confidant
+        .product(data-product='around-towner')
+            img(src='/img/svg/around-towner.svg', width="100", height="100")
+            p Around-Towner
+        .product(data-product='escort')
+            img(src='/img/svg/escort.svg', width="100", height="100")
+            p Escort
+        .product(data-product='continental')
+            img(src='/img/svg/continental.svg', width="100", height="100")
+            p Continental
+    hr
     div
         each p in products
             - var name = p.name;
-            h1= name
+            h1#product-name= name
+            hr
             div(style='display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; align-items: center;')
                 each col in p.colors
                     a(href='api/' + p.tagName, style="margin: 0 50px; text-align: center; text-decoration: none; color: black;")
