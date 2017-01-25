@@ -28,6 +28,11 @@ router.get('/legal', (req, res, next) => {
     res.render('legal');
 });
 
+/* GET locations page. */
+router.get('/locations', (req, res, next) => {
+    res.render('locations');
+});
+
 /* GET shop page. */
 router.get('/shop', (req, res, next) => {
     Product.find({}, (err, products) => {
