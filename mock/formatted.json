@@ -1,0 +1,645 @@
+[{
+    "name": "So Fresh Clothing",
+    "address": "911 Cedar St, Santa Cruz, CA 95060, USA",
+    "coords": {
+        "latitude": 36.9746108,
+        "longitude": -122.0278601
+    }
+}, {
+    "name": "Berdels",
+    "address": "1233 Pacific Ave, Santa Cruz, CA 95060, USA",
+    "coords": {
+        "latitude": 36.97331750000001,
+        "longitude": -122.0262669
+    }
+}, {
+    "name": "831 Coworking Collective / Organiks",
+    "address": "212 Laurel St #209, Santa Cruz, CA 95060, USA",
+    "coords": {
+        "latitude": 36.9693429,
+        "longitude": -122.0254433
+    }
+}, {
+    "name": "Revelry Supply",
+    "address": "150 Dubois St b, Santa Cruz, CA 95060, USA",
+    "coords": {
+        "latitude": 36.9865612,
+        "longitude": -122.0385843
+    }
+}, {
+    "name": "Santa Cruz Hydroponics And Organics",
+    "address": "815 Almar Ave k, Santa Cruz, CA 95060, USA",
+    "coords": {
+        "latitude": 36.9597316,
+        "longitude": -122.0443361
+    }
+}, {
+    "name": "Kind Peoples Collective",
+    "address": "3600 Soquel Ave, Santa Cruz, CA 95062, USA",
+    "coords": {
+        "latitude": 36.98568849999999,
+        "longitude": -121.9826074
+    }
+}, {
+    "name": "Global Garden Supply – Capitola",
+    "address": "1655 38th Ave, Capitola, CA 95010, USA",
+    "coords": {
+        "latitude": 36.9731922,
+        "longitude": -121.9677928
+    }
+}, {
+    "name": "Santa Cruz Hydroponics And Organics – East",
+    "address": "4000 Cordelia Ln, Soquel, CA 95073, USA",
+    "coords": {
+        "latitude": 36.9850087,
+        "longitude": -121.966069
+    }
+}, {
+    "name": "Pacific Organics & Wellness",
+    "address": "4041 Soquel Dr #256, Soquel, CA 95073, USA",
+    "coords": {
+        "latitude": 36.9876182,
+        "longitude": -121.9653163
+    }
+}, {
+    "name": "Cali Style",
+    "address": "222 Mt Hermon Rd, Scotts Valley, CA 95066, USA",
+    "coords": {
+        "latitude": 37.0474371,
+        "longitude": -122.0271913
+    }
+}, {
+    "name": "Santa Cruz Hydroponics And Organics – Felton",
+    "address": "5980 CA-9, Felton, CA 95018, USA",
+    "coords": {
+        "latitude": 37.0478264,
+        "longitude": -122.0729786
+    }
+}, {
+    "name": "Rasa Hydroponics",
+    "address": "5725 Winfield Blvd #8, San Jose, CA 95123, USA",
+    "coords": {
+        "latitude": 37.2488912,
+        "longitude": -121.8678356
+    }
+}, {
+    "name": "Southbay Hydroponics And Organics – San Jose",
+    "address": "1185 S Bascom Ave, San Jose, CA 95128, USA",
+    "coords": {
+        "latitude": 37.304445,
+        "longitude": -121.932075
+    }
+}, {
+    "name": "Monterey Bay Horticulture Supply",
+    "address": "218 Reindollar Ave #7a, Marina, CA 93933, USA",
+    "coords": {
+        "latitude": 36.680035,
+        "longitude": -121.8044593
+    }
+}, {
+    "name": "Southbay Hydroponics And Organics – Sunnyvale",
+    "address": "1697 Pomona Ave, San Jose, CA 95110, USA",
+    "coords": {
+        "latitude": 37.3089452,
+        "longitude": -121.8720502
+    }
+}, {
+    "name": "Dab Society Glass And Smoke Shop",
+    "address": "956 Story Rd, San Jose, CA 95122, USA",
+    "coords": {
+        "latitude": 37.3308221,
+        "longitude": -121.8563322
+    }
+}, {
+    "name": "Central Coast Garden & Farm",
+    "address": "61 Tarp St, Salinas, CA 93901, USA",
+    "coords": {
+        "latitude": 36.679986,
+        "longitude": -121.6425172
+    }
+}, {
+    "name": "Harvest Bloom",
+    "address": "951 Mariners Island Blvd #300, San Mateo, CA 94404, USA",
+    "coords": {
+        "latitude": 37.5592181,
+        "longitude": -122.2868239
+    }
+}, {
+    "name": "Global Garden Supply – Burlingame",
+    "address": "1350 Rollins Rd, Burlingame, CA 94010, USA",
+    "coords": {
+        "latitude": 37.5908944,
+        "longitude": -122.365823
+    }
+}, {
+    "name": "American Ave Hydroponics",
+    "address": "1208 W Winton Ave, Hayward, CA 94545, USA",
+    "coords": {
+        "latitude": 37.6525623,
+        "longitude": -122.1146984
+    }
+}, {
+    "name": "The Lucky Garden",
+    "address": "7071 Village Pkwy, Dublin, CA 94568, USA",
+    "coords": {
+        "latitude": 37.7092863,
+        "longitude": -121.9255632
+    }
+}, {
+    "name": "D&s Garden Supplies",
+    "address": "130 Doolittle Dr #17, San Leandro, CA 94577, USA",
+    "coords": {
+        "latitude": 37.724578,
+        "longitude": -122.195868
+    }
+}, {
+    "name": "D & S Garden Supplies",
+    "address": "130 Doolittle Dr #17, San Leandro, CA 94577, USA",
+    "coords": {
+        "latitude": 37.724578,
+        "longitude": -122.195868
+    }
+}, {
+    "name": "Brentwood Hydroponics & Orgs.",
+    "address": "560 Valdry Ct, Brentwood, CA 94513, USA",
+    "coords": {
+        "latitude": 37.9223954,
+        "longitude": -121.6855596
+    }
+}, {
+    "name": "Marin Hydro",
+    "address": "55 Frosty Ln, Novato, CA 94949, USA",
+    "coords": {
+        "latitude": 38.0747886,
+        "longitude": -122.5401663
+    }
+}, {
+    "name": "Monster Gardens",
+    "address": "235 Classic Ct, Rohnert Park, CA 94928, USA",
+    "coords": {
+        "latitude": 38.3584802,
+        "longitude": -122.7089762
+    }
+}, {
+    "name": "Deep Roots Hydro – Santa Rosa",
+    "address": "3715 Santa Rosa Ave, Santa Rosa, CA 95407, USA",
+    "coords": {
+        "latitude": 38.3887582,
+        "longitude": -122.7143514
+    }
+}, {
+    "name": "Deep Roots Hydro – Sebastopol",
+    "address": "2661 Gravenstein Hwy S, Sebastopol, CA 95472, USA",
+    "coords": {
+        "latitude": 38.3755115,
+        "longitude": -122.7918351
+    }
+}, {
+    "name": "Green Thumb Hydroponics",
+    "address": "6412 Tupelo Dr e, Citrus Heights, CA 95621, USA",
+    "coords": {
+        "latitude": 38.7052646,
+        "longitude": -121.3132741
+    }
+}, {
+    "name": "Appleseed Hydroponics",
+    "address": "560 Placerville Dr, Placerville, CA 95667, USA",
+    "coords": {
+        "latitude": 38.7328427,
+        "longitude": -120.8263245
+    }
+}, {
+    "name": "Healthy Harvest Hyrdoponics And Organics",
+    "address": "198 South St, San Luis Obispo, CA 93401, USA",
+    "coords": {
+        "latitude": 35.2697559,
+        "longitude": -120.6682059
+    }
+}, {
+    "name": "Sierra Horticulture",
+    "address": "158 Whitcomb Ave #7, Colfax, CA 95713, USA",
+    "coords": {
+        "latitude": 39.0923333,
+        "longitude": -120.9554895
+    }
+}, {
+    "name": "Anything Green Hydroponics",
+    "address": "17551 Penn Valley Dr, Penn Valley, CA 95946, USA",
+    "coords": {
+        "latitude": 39.1973028,
+        "longitude": -121.1789684
+    }
+}, {
+    "name": "Hydro Pacific Garden Supply",
+    "address": "351 Hastings Ave, Ukiah, CA 95482, USA",
+    "coords": {
+        "latitude": 39.1343087,
+        "longitude": -123.2010002
+    }
+}, {
+    "name": "Hometown Hydroponics",
+    "address": "800 S Auburn St, Grass Valley, CA 95945, USA",
+    "coords": {
+        "latitude": 39.2014358,
+        "longitude": -121.0600235
+    }
+}, {
+    "name": "Anything Green Hydroponics",
+    "address": "10826 Morning Star Ln, Nevada City, CA 95959, USA",
+    "coords": {
+        "latitude": 39.258408,
+        "longitude": -121.064228
+    }
+}, {
+    "name": "Mendocino Greenhouse Garden Supply",
+    "address": "960 E School Way, Redwood Valley, CA 95470, USA",
+    "coords": {
+        "latitude": 39.2661528,
+        "longitude": -123.2061626
+    }
+}, {
+    "name": "Advanced Garden Supply",
+    "address": "2110 Eloise Ave, South Lake Tahoe, CA 96150, USA",
+    "coords": {
+        "latitude": 38.91653,
+        "longitude": -120.001911
+    }
+}, {
+    "name": "Advanced Soil & Garden Supply",
+    "address": "350 Oro Dam Blvd E, Oroville, CA 95965, USA",
+    "coords": {
+        "latitude": 39.4984721,
+        "longitude": -121.5734532
+    }
+}, {
+    "name": "Trim Scene Solutions",
+    "address": "1271 Evergreen Rd, Redway, CA 95560, USA",
+    "coords": {
+        "latitude": 40.1212249,
+        "longitude": -123.7975798
+    }
+}, {
+    "name": "Blazzin Hydroponics",
+    "address": "6650 Crescent St #9, Ventura, CA 93003, USA",
+    "coords": {
+        "latitude": 34.250115,
+        "longitude": -119.198133
+    }
+}, {
+    "name": "Nor Cal Hydro Gardens And Organics",
+    "address": "9626 Tanqueray Ct, Redding, CA 96003, USA",
+    "coords": {
+        "latitude": 40.5664495,
+        "longitude": -122.2967615
+    }
+}, {
+    "name": "Bare Roots Indoor Gardens",
+    "address": "1615 E Cypress Ave, Redding, CA 96002, USA",
+    "coords": {
+        "latitude": 40.5707478,
+        "longitude": -122.3409116
+    }
+}, {
+    "name": "The Harvest Company",
+    "address": "2420 Athens Ave, Redding, CA 96001, USA",
+    "coords": {
+        "latitude": 40.5746314,
+        "longitude": -122.3765525
+    }
+}, {
+    "name": "All Seasons Horticultural",
+    "address": "17614 Chatsworth St, Granada Hills, CA 91344, USA",
+    "coords": {
+        "latitude": 34.2645917,
+        "longitude": -118.5181939
+    }
+}, {
+    "name": "Greener Grasses Collective",
+    "address": "9250 Reseda Blvd #420, Northridge, CA 91324, USA",
+    "coords": {
+        "latitude": 34.2386848,
+        "longitude": -118.5352902
+    }
+}, {
+    "name": "Eel River Hydroponics",
+    "address": "164 Dinsmore Dr, Fortuna, CA 95540, USA",
+    "coords": {
+        "latitude": 40.589319,
+        "longitude": -124.157262
+    }
+}, {
+    "name": "Northcoast Horticulture Supply-fortuna",
+    "address": "357 Main St, Fortuna, CA 95540, USA",
+    "coords": {
+        "latitude": 40.599019,
+        "longitude": -124.165596
+    }
+}, {
+    "name": "Beyond Hydroponics",
+    "address": "10615 San Fernando Rd, Pacoima, CA 91331, USA",
+    "coords": {
+        "latitude": 34.2628606,
+        "longitude": -118.4189823
+    }
+}, {
+    "name": "Green Cross Society Of Southern California",
+    "address": "7828 Santa Monica Blvd, West Hollywood, CA 90046, USA",
+    "coords": {
+        "latitude": 34.0907837,
+        "longitude": -118.3602418
+    }
+}, {
+    "name": "Northcoast Horticulture Supply-eureka",
+    "address": "60 W 4th St, Eureka, CA 95501, USA",
+    "coords": {
+        "latitude": 40.8020881,
+        "longitude": -124.1729741
+    }
+}, {
+    "name": "Northcoast Horticulture Supply-arcata",
+    "address": "639 6th St, Arcata, CA 95521, USA",
+    "coords": {
+        "latitude": 40.866017,
+        "longitude": -124.0861641
+    }
+}, {
+    "name": "Advanced Hydroponic Supplies",
+    "address": "1021 E Walnut St, Pasadena, CA 91106, USA",
+    "coords": {
+        "latitude": 34.1497823,
+        "longitude": -118.1290537
+    }
+}, {
+    "name": "Downtown Hydroponics",
+    "address": "439 E 16th St, Los Angeles, CA 90015, USA",
+    "coords": {
+        "latitude": 34.0313533,
+        "longitude": -118.2579519
+    }
+}, {
+    "name": "Northcoast Horticulture Supply-mckinleyville",
+    "address": "1580 Nursery Way, McKinleyville, CA 95519, USA",
+    "coords": {
+        "latitude": 40.9366442,
+        "longitude": -124.1027564
+    }
+}, {
+    "name": "Xtractor Depot",
+    "address": "2321 Yates Ave, Commerce, CA 90040, USA",
+    "coords": {
+        "latitude": 33.9976225,
+        "longitude": -118.1331223
+    }
+}, {
+    "name": "Spectrum Hyrdoponics",
+    "address": "15421 Carmenita Rd, Santa Fe Springs, CA 90670, USA",
+    "coords": {
+        "latitude": 33.8901965,
+        "longitude": -118.0475771
+    }
+}, {
+    "name": "La Habra Hydroponics",
+    "address": "1301 S Beach Blvd o, La Habra, CA 90631, USA",
+    "coords": {
+        "latitude": 33.9151756,
+        "longitude": -117.9707679
+    }
+}, {
+    "name": "Discount Hydroponics – Victorville",
+    "address": "15208 Bear Valley Rd #200, Victorville, CA 92395, USA",
+    "coords": {
+        "latitude": 34.4719173,
+        "longitude": -117.331802
+    }
+}, {
+    "name": "Bear Valley Hydroponics",
+    "address": "17455 Bear Valley Rd, Hesperia, CA 92345, USA",
+    "coords": {
+        "latitude": 34.4703445,
+        "longitude": -117.2825387
+    }
+}, {
+    "name": "55 Hydroponics",
+    "address": "1727 Boyd St, Santa Ana, CA 92705, USA",
+    "coords": {
+        "latitude": 33.7241084,
+        "longitude": -117.8375013
+    }
+}, {
+    "name": "Disorderly Conduction",
+    "address": "28 Morena, Irvine, CA 92612, USA",
+    "coords": {
+        "latitude": 33.6641814,
+        "longitude": -117.8296484
+    }
+}, {
+    "name": "San Diego Hydroponics & Organics – North County Coastal",
+    "address": "6352 Corte Del Abeto, Carlsbad, CA 92011, USA",
+    "coords": {
+        "latitude": 33.1196691,
+        "longitude": -117.275944
+    }
+}, {
+    "name": "Best Hydroponic Supply",
+    "address": "6818 W Cheyenne Ave, Las Vegas, NV 89108, USA",
+    "coords": {
+        "latitude": 36.2188084,
+        "longitude": -115.2438713
+    }
+}, {
+    "name": "San Diego Hydroponics & Organics – North County Inland",
+    "address": "802 N Twin Oaks Valley Rd #108, San Marcos, CA 92069, USA",
+    "coords": {
+        "latitude": 33.1535039,
+        "longitude": -117.1620072
+    }
+}, {
+    "name": "The Apothecarium Las Vegas",
+    "address": "2920 N Green Valley Pkwy, Henderson, NV 89014, USA",
+    "coords": {
+        "latitude": 36.0756924,
+        "longitude": -115.0812919
+    }
+}, {
+    "name": "San Diego Hydroponics & Organics – Beach Cities",
+    "address": "4122 Napier St, San Diego, CA 92110, USA",
+    "coords": {
+        "latitude": 32.7825112,
+        "longitude": -117.2064823
+    }
+}, {
+    "name": "San Diego Hydroponics & Organics – East County",
+    "address": "11649 Riverside Dr #101, Lakeside, CA 92040, USA",
+    "coords": {
+        "latitude": 32.8602581,
+        "longitude": -116.940377
+    }
+}, {
+    "name": "San Diego Hydroponics & Organics – Chula Vista",
+    "address": "651 Anita St, Chula Vista, CA 91911, USA",
+    "coords": {
+        "latitude": 32.597153,
+        "longitude": -117.0809056
+    }
+}, {
+    "name": "Grow Supply",
+    "address": "518 N Parks Rd #2, Parks, AZ 86018, USA",
+    "coords": {
+        "latitude": 35.2573801,
+        "longitude": -111.9394511
+    }
+}, {
+    "name": "Hydroponics Depot",
+    "address": "10225 N Metro Pkwy E, Phoenix, AZ 85051, USA",
+    "coords": {
+        "latitude": 33.5799709,
+        "longitude": -112.121327
+    }
+}, {
+    "name": "Hydrokits Express",
+    "address": "5120 E Hampton Ave, Mesa, AZ 85206, USA",
+    "coords": {
+        "latitude": 33.3918378,
+        "longitude": -111.7215413
+    }
+}, {
+    "name": "Arizona Biological Control",
+    "address": "10831 N Mavinee Dr #185, Tucson, AZ 85737, USA",
+    "coords": {
+        "latitude": 32.4030715,
+        "longitude": -110.9474456
+    }
+}, {
+    "name": "Growers House",
+    "address": "1501 E 21st St, Tucson, AZ 85719, USA",
+    "coords": {
+        "latitude": 32.2086384,
+        "longitude": -110.9486607
+    }
+}, {
+    "name": "Valley Indoor",
+    "address": "44195 Yale Rd, Chilliwack, BC V2R 4H2, Canada",
+    "coords": {
+        "latitude": 49.1455564,
+        "longitude": -122.0015932
+    }
+}, {
+    "name": "Green Planet-west",
+    "address": "15374 103A Ave, Surrey, BC V3R 7A2, Canada",
+    "coords": {
+        "latitude": 49.1899308,
+        "longitude": -122.7963716
+    }
+}, {
+    "name": "Fermentables Homebrew",
+    "address": "3915 Crutcher St, North Little Rock, AR 72118, USA",
+    "coords": {
+        "latitude": 34.7919106,
+        "longitude": -92.2870588
+    }
+}, {
+    "name": "Aerogro",
+    "address": "127 N Main St, East Peoria, IL 61611, USA",
+    "coords": {
+        "latitude": 40.6665973,
+        "longitude": -89.57971529999999
+    }
+}, {
+    "name": "Southside Garden Supply",
+    "address": "3005 Old Seward Hwy, Anchorage, AK 99503, USA",
+    "coords": {
+        "latitude": 61.19067499999999,
+        "longitude": -149.8682704
+    }
+}, {
+    "name": "Habhydro Garden Supply",
+    "address": "3388 W Currahee St, Toccoa, GA 30577, USA",
+    "coords": {
+        "latitude": 34.5433419,
+        "longitude": -83.3617003
+    }
+}, {
+    "name": "Flora Hydroponics-athens",
+    "address": "150 Paradise Blvd, Athens, GA 30607, USA",
+    "coords": {
+        "latitude": 33.9789982,
+        "longitude": -83.40037939999999
+    }
+}, {
+    "name": "Green Planet-east",
+    "address": "75 Aventura Ct, Mississauga, ON L5T 2Y6, Canada",
+    "coords": {
+        "latitude": 43.6466201,
+        "longitude": -79.7032546
+    }
+}, {
+    "name": "Hilo Grow Shop",
+    "address": "500 Kalanianaole Ave, Hilo, HI 96720, USA",
+    "coords": {
+        "latitude": 19.7257395,
+        "longitude": -155.0568164
+    }
+}, {
+    "name": "Fresh Health Hydroponics",
+    "address": "1738 Kings Ave, Jacksonville, FL 32207, USA",
+    "coords": {
+        "latitude": 30.3104569,
+        "longitude": -81.65160809999999
+    }
+}, {
+    "name": "Urban Roots Garden Supply Inc",
+    "address": "11732 N Dale Mabry Hwy, Tampa, FL 33618, USA",
+    "coords": {
+        "latitude": 28.054931,
+        "longitude": -82.5055615
+    }
+}, {
+    "name": "Grace’s Hydro-organic Garden",
+    "address": "8707 Temple Terrace Hwy, Tampa, FL 33637, USA",
+    "coords": {
+        "latitude": 28.0324748,
+        "longitude": -82.3562922
+    }
+}, {
+    "name": "Health & Harvest Company",
+    "address": "911 NW 209th Ave #129, Pembroke Pines, FL 33029, USA",
+    "coords": {
+        "latitude": 26.01617,
+        "longitude": -80.4285828
+    }
+}, {
+    "name": "Future Farms Inc",
+    "address": "22700 Krome Ave, Miami, FL 33170, USA",
+    "coords": {
+        "latitude": 25.5528448,
+        "longitude": -80.47810740000001
+    }
+}, {
+    "name": "Florida Agricultural",
+    "address": "13444 SW 131st St, Miami, FL 33186, USA",
+    "coords": {
+        "latitude": 25.6456902,
+        "longitude": -80.4119904
+    }
+}, {
+    "name": "Florida Agricultural",
+    "address": "12905 SW 132nd St #2, Miami, FL 33186, USA",
+    "coords": {
+        "latitude": 25.6453473,
+        "longitude": -80.4034241
+    }
+}, {
+    "name": "Growers House, Ll",
+    "address": "1051 NE 204th Terrace, Miami, FL 33179, USA",
+    "coords": {
+        "latitude": 25.963178,
+        "longitude": -80.183812
+    }
+}, {
+    "name": "The Hydro Zone",
+    "address": "Calle Antonia Principe, Plaza Pradera Suite 5, Toa Baja, 00949, Puerto Rico",
+    "coords": {
+        "latitude": 18.429572,
+        "longitude": -66.166427
+    }
+}]
