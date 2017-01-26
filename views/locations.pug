@@ -1,11 +1,15 @@
 extends layout
 
+block stylesheets
+    link(rel='stylesheet', href='/css/map.css')
+    link(rel='stylesheet', href='https://unpkg.com/leaflet@1.0.3/dist/leaflet.css')
+
 block content
     h1 Locations
-    .locations(style='display: flex; flex-direction: row;')
-        ul.location-list(style='height: 400px; width: 20%; background-color: tomato; overflow: scroll; list-style: none; text-align: left; margin: 0; padding: 0;')
-        #map(style='height: 400px; width: 80%;')
+    .locations
+        ul.location-list
+        #map
 
 block scripts
-    script(src='/js/locations.js')
-    script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDMJTAOwHt8tVE4r9ZZSobJJW5q7gDrlzs&callback=initializeMap')
+    script(src='https://unpkg.com/leaflet@1.0.3/dist/leaflet.js')
+    script(src='/js/map.js')
