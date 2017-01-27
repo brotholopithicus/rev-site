@@ -1,27 +1,6 @@
-const products = document.querySelectorAll('.product');
-const productName = document.querySelector('#product-name');
+const imageLinks = document.querySelectorAll('.img-links-container a');
 
-products.forEach(product => {
-    product.addEventListener('click', productClickHandler);
+imageLinks.forEach(imageLink => {
+  imageLink.style.background = `url(/img/${imageLink.id}.jpg) no-repeat center center`;
+  imageLink.style.backgroundSize = 'contain';
 });
-
-function verifyNode(el, test) {
-    if (el.classList.contains(test)) {
-        return el;
-    } else if (el.parentNode.classList.contains(test)) {
-        return el.parentNode;
-    } else {
-        verifyNode(el.parentNode, test);
-    }
-}
-
-function productClickHandler(e) {
-    let p = verifyNode(e.target, 'product');
-    products.forEach(product => {
-        if (product.classList.contains('active')) {
-            product.classList.remove('active');
-        }
-    });
-    p.classList.add('active');
-    productName.textContent = p.dataset.product.toUpperCase();
-}

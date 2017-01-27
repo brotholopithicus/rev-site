@@ -2,10 +2,23 @@ extends layout
 
 block content
     include partials/carousel
-    .row.mt-3
-        .col-md-4
-            img.rounded.mx-auto.d-block.img-fluid(src='/img/continental.jpg')
-        .col-md-4
-            img.rounded.mx-auto.d-block.img-fluid(src='/img/confidant.jpg')
-        .col-md-4
-            img.rounded.mx-auto.d-block.img-fluid(src='/img/accomplice.jpg')
+    .img-links-container
+        a#continental(href='/products/continental')
+            p The Continental
+        a#confidant(href='/products/confidant')
+            p The Confidant
+        a#accomplice(href='/products/accomplice')
+            p The Accomplice
+
+
+
+block scripts
+    script(src='/js/index.js')
+
+        //- .row.mt-3
+        //-     .col-md-4
+        //-         img.rounded.mx-auto.d-block.img-fluid(src='/img/continental.jpg')
+        //-     .col-md-4
+        //-         img.rounded.mx-auto.d-block.img-fluid(src='/img/confidant.jpg')
+        //-     .col-md-4
+        //-         img.rounded.mx-auto.d-block.img-fluid(src='/img/accomplice.jpg')
