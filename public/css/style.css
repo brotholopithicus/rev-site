@@ -9,7 +9,8 @@
 body {
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-    background-color: rgba(102, 102, 102, 0.15);
+    /* background-color: rgba(102, 102, 102, 0.15); */
+    background-color: #fff;
 }
 
 nav a {
@@ -78,10 +79,9 @@ ul {
 /* ---- Page Elements ---- */
 
 .footer-container {
-    margin-top: 100px;
+    margin-top: 75px;
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
 }
 
 .footer-container a {
@@ -93,7 +93,7 @@ ul {
 }
 
 .footer-container .logo {
-    width: 100vw;
+    width: 105vw;
     padding: 28px 0;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
@@ -105,12 +105,18 @@ ul {
     height: 70px;
     margin: 0 auto;
 }
-.footer-container p {
-  margin-top: 25px;
+.footer-container .page-bottom {
   margin-bottom: 0;
   font-size: 11px;
   align-self: center;
   text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-bottom p {
+  flex: 0 30%;
 }
 .footer-container p a:hover {
   text-shadow: 0 0 5px 4px #000;
@@ -120,7 +126,7 @@ ul {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -145,6 +151,13 @@ ul {
     margin-right: 0px;
 }
 
+.social-container a img {
+  height: 55px;
+  transition: 0.4s;
+}
+.social-container a img:hover {
+  transform: scale(1.05, 1.05);
+}
 .social-container a:first-child {
     margin-right: 12px;
 }
