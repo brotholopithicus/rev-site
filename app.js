@@ -17,6 +17,7 @@ const app = express();
 
 // db config
 mongoose.connect('mongodb://localhost/revelry');
+// mongoose.connect('mongodb://192.168.1.42/revelry-supply');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {

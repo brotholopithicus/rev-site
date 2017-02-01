@@ -35,15 +35,7 @@ router.get('/locations', (req, res, next) => {
 
 /* GET shop page. */
 router.get('/shop', (req, res, next) => {
-    Product.find({}, (err, products) => {
-        if (err) return next(err);
-        products.forEach(p => {
-            p.colors.forEach(col => {
-                col.buffer = col.buffer.toString('base64');
-            });
-        });
-        res.render('shop', { products });
-    });
+    res.render('shop');
 });
 
 module.exports = router;

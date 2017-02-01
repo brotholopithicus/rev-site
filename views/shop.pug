@@ -1,5 +1,8 @@
 extends layout
 
+block stylesheets
+    link(rel='stylesheet', href='/css/shop.css')
+
 block content
     .product-categories
         .product(data-product='all').active
@@ -21,17 +24,8 @@ block content
             img(src='/img/svg/continental.svg', width="100", height="100")
             p Continental
     hr
-    div
-        each p in products
-            - var name = p.name;
-            h1#product-name= name
-            hr
-            div(style='display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; align-items: center;')
-                each col in p.colors
-                    a(href='api/' + p.tagName, style="margin: 0 50px; text-align: center; text-decoration: none; color: black;")
-                        p= col.name
-                        img(src='data:image/jpb;base64,' + col.buffer)
+    .product-container
 
-    pre= products
 block scripts
     script(src='/js/products.js')
+    script(src='/js/shop.js')

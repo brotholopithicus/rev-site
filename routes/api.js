@@ -14,11 +14,17 @@ router.get('/locations', (req, res, next) => {
 
 /* GET product data */
 router.get('/products/:product', (req, res, next) => {
-    Product.findOne({ tagName: req.params.product }, (err, product) => {
-        if (err) return next(err);
-        console.log(product);
-        return res.json(product);
-    });
+    if (req.params.product === 'all') {
+        Product.find({}, (err, products) => {
+            if (err) return next(err);
+            return res.json(products);
+        });
+    } else {
+        Product.findOne({ tagName: req.params.product }, (err, product) => {
+            if (err) return next(err);
+            return res.json(product);
+        });
+    }
 });
 
 module.exports = router;

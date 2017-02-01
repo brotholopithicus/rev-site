@@ -1,18 +1,18 @@
 const path = require('path');
 const fs = require('fs');
 
-let name = 'The Continental';
-let tagName = 'continental';
+let name = 'The Around-Towner';
+let tagName = 'around-towner';
 let title = 'ODOR ABSORBING, WATER RESISTANT';
-let subtitle = 'THE CONTINENTAL IS OUR LARGEST DUFFLE BAG; IT IS DESIGNED TO BE ABLE TO HANDLE THE LARGER CARGO.'
+let subtitle = 'THE AROUND-TOWNER IS JUST AS THE NAME WOULD SUGGEST; IT IS THE PERFECT INTERMEDIATE SIZE DUFFLE FOR DAILY BUSINESS.';
 
 let details = 'Dual Carbon Filter, Silicone backed nylon, Custom protective lining, Waterproof zipper, Velcro zipper covering, Lockable, Inner stash pocket, End handles, Genuine leather accents, Removable shoulder strap';
 details = details.split(', ');
 
 let dimensions = {
-    x: 30,
-    y: 17,
-    z: 16
+    x: 24,
+    y: 14,
+    z: 13
 }
 
 let additional = 'Refresh your bag by simply placing in the dryer for a few minutes – until warm – to release all absorbed odors.';
@@ -43,8 +43,7 @@ let colors = [{
 ];
 
 let buffers = colors.map(color => {
-  console.log(color);
-    let resolvedPath = path.join(__dirname, '/img/continental/' + color.color + '.jpg');
+    let resolvedPath = path.join(__dirname, '/img/around-towner/' + color.color + '.jpg');
     let file = fs.readFileSync(resolvedPath);
     let buffer = new Buffer(file);
     return {
@@ -55,10 +54,10 @@ let buffers = colors.map(color => {
 });
 
 let newProduct = {
-    name: name,
+    name,
     tagName,
     stock: 100,
-    price: 200,
+    price: 150,
     title,
     subtitle,
     details,
@@ -66,12 +65,12 @@ let newProduct = {
     additional,
     colors: []
 }
+
 for (let i = 0; i < buffers.length; i++) {
     let prod = buffers[i];
     newProduct.colors.push({ name: prod.name, color: prod.color, buffer: prod.buffer });
 }
-
-fs.writeFile('mock/continental.json', JSON.stringify(newProduct), 'utf8', (err) => {
+fs.writeFile('mock/around-towner.json', JSON.stringify(newProduct), 'utf8', (err) => {
     if (err) throw err;
     console.log('done!');
 });

@@ -1,0 +1,29 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+}
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.product-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+@media (min-width: 1025px) {
+  .product-wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+}
+.hidden {
+  display: none;
+}

@@ -1,3 +1,4 @@
+const productContainer = document.querySelector('.product-container');
 const products = document.querySelectorAll('.product');
 const productName = document.querySelector('#product-name');
 
@@ -23,5 +24,19 @@ function productClickHandler(e) {
         }
     });
     p.classList.add('active');
-    productName.textContent = p.dataset.product.toUpperCase();
+    setActiveTab(p);
+}
+
+function setActiveTab(product) {
+    filter(product.dataset.product);
+}
+
+function titleCase(str) {
+    let titleStr = str
+        .toLowerCase()
+        .split(' ')
+        .map(str => {
+            return str.charAt(0).toUpperCase() + str.substr(1);
+        });
+    return titleStr.join(' ');
 }
