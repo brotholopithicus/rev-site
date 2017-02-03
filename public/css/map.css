@@ -1,27 +1,49 @@
 .locations {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 }
 
 .location-list {
-    height: 600px;
-    width: 30%;
+    height: 20vh;
+    width: 100%;
     background-color: #dddbdc;
     overflow: scroll;
     text-align: left;
     margin: 0;
     padding: 0;
 }
+
 .location-list li {
-  cursor: pointer;
-  padding: 5px;
-  font-size: 12px;
-  border-bottom: 1px solid black;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 10px;
+    border-bottom: 1px solid black;
 }
+
 .location-list li:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
+
 #map {
-    height: 600px;
-    width: 70%;
+    height: 50vh;
+    width: 100%;
+}
+
+@media(min-width: 1025px) {
+    .locations {
+        padding: 0;
+        flex-direction: row;
+    }
+    .location-list {
+        height: 600px;
+        width: 30%;
+    }
+    .location-list li {
+      padding: 5px;
+      font-size: 14px;
+    }
+    #map {
+        height: 600px;
+        width: 70%;
+    }
 }

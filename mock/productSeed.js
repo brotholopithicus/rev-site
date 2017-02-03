@@ -10,7 +10,8 @@ const confidant = require('./confidant');
 const continental = require('./continental');
 const escort = require('./escort');
 
-let products = [aroundTowner, confidant, continental, escort];
+// let products = [aroundTowner, confidant, continental, escort];
+let products = [require('./accomplice')];
 
 products.forEach(product => {
     let np = new Product(product);

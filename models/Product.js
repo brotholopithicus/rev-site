@@ -14,6 +14,7 @@ const productSchema = Schema({
         y: Number,
         z: Number
     },
+    weight: Number,
     additional: String,
     colors: [{
         name: String,
