@@ -1,0 +1,20 @@
+extends layout
+
+block stylesheets
+    link(rel='stylesheet', href='/css/product.css')
+
+block content
+    .single-product
+        h1#productName
+        h2#productColor
+        p#productTitle
+        p#productSubtitle
+        img#productImage
+        p#additional
+    hr
+    .other-colors
+    hr
+    p.productData
+
+block scripts
+    script(src='/js/product.js')

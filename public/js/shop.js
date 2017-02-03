@@ -12,6 +12,9 @@ fetch('/api/products/all')
                     let productColor = document.createElement('div');
                     productColor.id = color.name;
                     productColor.classList.add('product-color');
+                    productColor.dataset.name = product.tagName;
+                    productColor.dataset.color = color.color;
+                    productColor.addEventListener('click', productClickHandler);
                     let data = arrayBufferToBase64(color.buffer.data);
                     let img = document.createElement('img');
                     img.src = 'data:image/jpg;base64,' + data;
@@ -56,4 +59,11 @@ function filter(product) {
             }
         }
     });
+}
+
+function productClickHandler(e) {
+  let target = verifyNode(e.target, 'product-color');
+  let name = target.dataset.name;
+  let color = target.dataset.color;
+  window.location.href = `/shop/${name}#${color}`;
 }

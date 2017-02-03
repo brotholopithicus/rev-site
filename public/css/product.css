@@ -1,0 +1,16 @@
+.single-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.other-colors {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1025px) {
+  .other-colors {
+    flex-direction: row;
+  }
+}

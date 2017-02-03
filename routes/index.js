@@ -38,4 +38,9 @@ router.get('/shop', (req, res, next) => {
     res.render('shop');
 });
 
+/* GET product page. */
+router.get('/shop/:product', (req, res, next) => {
+    res.render('product');
+});
+
 module.exports = router;
