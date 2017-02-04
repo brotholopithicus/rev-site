@@ -23,6 +23,12 @@ router.get('/exploits', (req, res, next) => {
     res.render('exploits');
 });
 
+/* GET exploit page. */
+router.get('/exploit/:exploit', (req, res, next) => {
+    let exploit = req.params.exploit;
+    res.render('exploit', { exploit });
+});
+
 /* GET legal page. */
 router.get('/legal', (req, res, next) => {
     res.render('legal');
