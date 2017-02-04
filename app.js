@@ -28,8 +28,7 @@ db.once('open', () => {
 app.use(session({
     secret: 'bill murray',
     resave: true,
-    saveUninitialized: false,
-    cookie: { secure: false },
+    saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: db })
 }));
 

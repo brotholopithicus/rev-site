@@ -4,17 +4,24 @@ block stylesheets
     link(rel='stylesheet', href='/css/product.css')
 
 block content
+    h1#productName
+    h2#productColor
+    hr
     .single-product
-        h1#productName
-        h2#productColor
-        p#productTitle
-        p#productSubtitle
-        img#productImage
-        p#additional
+        .single-product-image
+            img#productImage
+        .single-product-text
+            p#productTitle
+            p#productSubtitle
+            p#additional
+            #productDetailsList
+              ul#listOne
+              ul#listTwo
     hr
     .other-colors
     hr
-    p.productData
+    a(href='/shop') Back To Store
+    //p.productData
 
 block scripts
     script(src='/js/product.js')

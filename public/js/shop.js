@@ -15,6 +15,7 @@ fetch('/api/products/all')
                     productColor.dataset.name = product.tagName;
                     productColor.dataset.color = color.color;
                     productColor.addEventListener('click', productClickHandler);
+                    productColor.style.cursor = 'pointer';
                     let data = arrayBufferToBase64(color.buffer.data);
                     let img = document.createElement('img');
                     img.src = 'data:image/jpg;base64,' + data;

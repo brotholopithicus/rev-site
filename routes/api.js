@@ -22,7 +22,11 @@ router.get('/products/:product', (req, res, next) => {
     } else {
         Product.findOne({ tagName: req.params.product }, (err, product) => {
             if (err) return next(err);
-            return res.json(product);
+            if (!req.query.color) return res.json(product);
+            product.colors.forEach(color => {
+                if (color.color === req.query.color) return res.json(color);
+            });
+
         });
     }
 });

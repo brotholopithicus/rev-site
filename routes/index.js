@@ -4,13 +4,14 @@ var router = express.Router();
 const Product = require('../models/Product');
 const User = require('../models/User');
 
+const mid = require('../mid');
 /* GET home page. */
 router.get('/', (req, res, next) => {
     res.render('index', { title: 'Home' });
 });
 
 /* GET logout page. */
-router.get('/logout', (req, res, next) => {
+router.get('/logout', mid.isLoggedIn, (req, res, next) => {
     if (req.session) {
         req.session.destroy(err => {
             if (err) return next(err);
@@ -20,7 +21,7 @@ router.get('/logout', (req, res, next) => {
 });
 
 /* GET profile page. */
-router.get('/profile', (req, res, next) => {
+router.get('/profile', mid.isLoggedIn, (req, res, next) => {
     User.findById(req.session.userId, (err, user) => {
         if (err) return next(err);
         return res.render('profile', { username: user.username });
@@ -59,19 +60,19 @@ router.get('/shop/:product', (req, res, next) => {
 });
 
 /* GET login page. */
-router.get('/login', (req, res, next) => {
+router.get('/login', mid.isLoggedOut, (req, res, next) => {
     res.render('users/login');
 });
 
 /* POST user login. */
-router.post('/login', (req, res, next) => {
+router.post('/login', mid.isLoggedOut, (req, res, next) => {
     let username = req.body.username;
     let password = req.body.password;
     if (username && password) {
         User.findOne({ username }, (err, user) => {
             if (err || !user) return next(err ? err : new Error('User Not Found'));
             req.session.userId = user._id;
-            return res.redirect('/');
+            return res.redirect('/profile');
         });
     } else {
         let err = new Error('All Fields Required');
@@ -80,12 +81,12 @@ router.post('/login', (req, res, next) => {
     }
 });
 /* GET signup page. */
-router.get('/signup', (req, res, next) => {
+router.get('/signup', mid.isLoggedOut, (req, res, next) => {
     res.render('users/signup');
 });
 
 /* POST user signup. */
-router.post('/signup', (req, res, next) => {
+router.post('/signup', mid.isLoggedOut, (req, res, next) => {
     let username = req.body.username;
     let password = req.body.password;
     let confirmPassword = req.body.confirmPassword;

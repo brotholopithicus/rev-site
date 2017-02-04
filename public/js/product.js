@@ -3,6 +3,8 @@ const productHeader = document.querySelector('#productName');
 const productTitle = document.querySelector('#productTitle');
 const productSubtitle = document.querySelector('#productSubtitle');
 const productAdditional = document.querySelector('#additional');
+const listOne = document.querySelector('#listOne');
+const listTwo = document.querySelector('#listTwo');
 const otherColors = document.querySelector('.other-colors');
 
 const product = {
@@ -15,22 +17,30 @@ const colorImage = document.querySelector('#productImage');
 fetch(`/api/products/${product.name}`).then(
     productName => {
         productName.json().then(result => {
-            productData.textContent = JSON.stringify(result);
+            if(productData) productData.textContent = JSON.stringify(result);
             productHeader.textContent = result.name;
             productTitle.textContent = result.title;
             productAdditional.textContent = result.additional;
             productSubtitle.textContent = result.subtitle;
+            result.details.forEach(detail => {
+                let el = document.createElement('li');
+                el.textContent = detail;
+                let list = result.details.indexOf(detail) % 2 === 0 ? listOne : listTwo;
+                list.appendChild(el);
+            });
+            listOne.style.borderRight = '4px solid #000';
             result.colors.forEach(color => {
                 if (color.color === product.color) {
                     colorHeader.textContent = color.name;
-                    let data = arrayBufferToBase64(color.buffer.data);
-                    colorImage.src = 'data:image/jpeg;base64,' + data;
+                    let imgData = arrayBufferToBase64(color.buffer.data);
+                    colorImage.src = imgData;
                 } else {
                     let colorDiv = document.createElement('div');
                     let img = document.createElement('img');
                     let imgData = arrayBufferToBase64(color.buffer.data);
-                    img.src = 'data:image/jpeg;base64,' + imgData;
+                    img.src = imgData;
                     colorDiv.appendChild(img);
+                    colorDiv.style.cursor = 'pointer';
                     colorDiv.addEventListener('click', handleChangeColor.bind(color.color));
                     otherColors.appendChild(colorDiv);
                 }
@@ -40,7 +50,15 @@ fetch(`/api/products/${product.name}`).then(
 
 function handleChangeColor(e) {
     window.location.assign(`/shop/${product.name}#${this}`);
-    window.location.reload();
+    fetch(`/api/products/${product.name}?color=${this}`)
+        .then(res => {
+            res.json()
+                .then(color => {
+                    let imgData = arrayBufferToBase64(color.buffer.data);
+                    colorImage.src = imgData;
+                    colorHeader.textContent = color.name;
+                });
+        });
 }
 
 function arrayBufferToBase64(buffer) {
@@ -49,5 +67,5 @@ function arrayBufferToBase64(buffer) {
     for (let i = 0; i < bytes.byteLength; i++) {
         binary += String.fromCharCode(bytes[i]);
     }
-    return btoa(binary);
+    return 'data:image/jpeg;base64,' + btoa(binary);
 }
