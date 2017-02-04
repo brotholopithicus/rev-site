@@ -1,57 +1,73 @@
 h1, h2 {
-  text-align: center;
+    text-align: center;
 }
+
 h1#productName {
-  font-size: 64px;
+    font-size: 34px;
 }
+
 h2#productColor {
-  font-size: 24px;
+    font-size: 24px;
 }
+
 .single-product {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.single-product-text {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
 .other-colors {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (min-width: 1025px) {
-  .single-product {
-    flex-direction: row;
-  }
-  .single-product-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .single-product-image img {
-    height: 300px;
-  }
-  .single-product-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .other-colors {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+    h1#productName {
+        font-size: 64px;
+    }
+    .single-product {
+        flex-direction: row;
+    }
+    .single-product-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+    .single-product-text {
+      border: none;
+    }
+    .single-product-image img {
+        height: 300px;
+    }
+    .other-colors {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 #productDetailsList {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #productDetailsList ul {
-  text-align: center;
-  padding: 15px;
+    text-align: center;
+    padding: 15px;
 }
