@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const passwords = require('../mid');
+const passwords = require('../mid').passwords;
 
 const userSchema = Schema({
     name: { type: String },

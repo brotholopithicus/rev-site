@@ -1,0 +1,17 @@
+extends ../layout
+
+block stylesheets
+    link(rel='stylesheet', href='/css/login.css')
+
+block content
+    h1 Login
+    form#login-form(method='POST', action='/users/login')
+        label Username
+        input(type='text', id='username', name='username')
+        label Password
+        input(type='password', id='password', name='password')
+        input(type='submit', value='Submit')
+    .not-registered
+        h4 Not Registered?
+        a(href='/signup') Signup Now!
+block scripts

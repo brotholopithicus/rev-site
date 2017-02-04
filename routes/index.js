@@ -5,17 +5,18 @@ const Product = require('../models/Product');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
+  console.log(req.session);
     res.render('index', { title: 'Home' });
 });
 
 /* GET login page. */
 router.get('/login', (req, res, next) => {
-    res.send('LOGIN PAGE');
+    res.render('users/login');
 });
 
 /* GET signup page. */
 router.get('/signup', (req, res, next) => {
-    res.send('SIGNUP PAGE');
+    res.render('users/signup');
 });
 
 /* GET exploits page. */

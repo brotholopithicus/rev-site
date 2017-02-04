@@ -78,6 +78,8 @@ ul {
 
 /* ---- Page Elements ---- */
 
+/* FOOTER */
+
 .footer-container {
     margin-top: 75px;
     display: flex;
@@ -140,6 +142,7 @@ ul {
         margin: 10px auto;
     }
 }
+/* END FOOTER */
 
 .links-container {}
 

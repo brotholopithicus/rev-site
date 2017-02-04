@@ -11,3 +11,7 @@ nav.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse.fixed-top
             a.nav-item.nav-link(href='/exploits') Exploits
             a.nav-item.nav-link(href='/locations') Locations
             a.nav-item.nav-link(href='/cart') Cart
+            if !user
+                a.nav-item.nav-link(href='/login') Login / Register
+            else
+                a.nav-item.nav-link(href='/profile') Profile
