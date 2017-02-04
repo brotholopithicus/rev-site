@@ -2,21 +2,29 @@ var express = require('express');
 var router = express.Router();
 
 const Product = require('../models/Product');
+const User = require('../models/User');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  console.log(req.session);
     res.render('index', { title: 'Home' });
 });
 
-/* GET login page. */
-router.get('/login', (req, res, next) => {
-    res.render('users/login');
+/* GET logout page. */
+router.get('/logout', (req, res, next) => {
+    if (req.session) {
+        req.session.destroy(err => {
+            if (err) return next(err);
+            return res.redirect('/');
+        });
+    }
 });
 
-/* GET signup page. */
-router.get('/signup', (req, res, next) => {
-    res.render('users/signup');
+/* GET profile page. */
+router.get('/profile', (req, res, next) => {
+    User.findById(req.session.userId, (err, user) => {
+        if (err) return next(err);
+        return res.render('profile', { username: user.username });
+    });
 });
 
 /* GET exploits page. */
@@ -50,4 +58,53 @@ router.get('/shop/:product', (req, res, next) => {
     res.render('product');
 });
 
+/* GET login page. */
+router.get('/login', (req, res, next) => {
+    res.render('users/login');
+});
+
+/* POST user login. */
+router.post('/login', (req, res, next) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    if (username && password) {
+        User.findOne({ username }, (err, user) => {
+            if (err || !user) return next(err ? err : new Error('User Not Found'));
+            req.session.userId = user._id;
+            return res.redirect('/');
+        });
+    } else {
+        let err = new Error('All Fields Required');
+        err.status = 401;
+        return next(err);
+    }
+});
+/* GET signup page. */
+router.get('/signup', (req, res, next) => {
+    res.render('users/signup');
+});
+
+/* POST user signup. */
+router.post('/signup', (req, res, next) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let confirmPassword = req.body.confirmPassword;
+    if (username && password && confirmPassword) {
+        if (password !== confirmPassword) {
+            let err = new Error('Passwords Do Not Match');
+            err.status = 400;
+            return next(err);
+        }
+        let user = new User({ username, password });
+        user.save((err, user) => {
+            if (err) return next(err);
+            req.session.userId = user._id;
+            return res.redirect('/profile');
+        });
+    } else {
+        let err = new Error('All Fields Required');
+        err.status = 400;
+        return next(err);
+    }
+});
 module.exports = router;

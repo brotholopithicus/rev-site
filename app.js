@@ -27,16 +27,15 @@ db.once('open', () => {
 // session config
 app.use(session({
     secret: 'bill murray',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true },
+    resave: true,
+    saveUninitialized: false,
+    cookie: { secure: false },
     store: new MongoStore({ mongooseConnection: db })
 }));
 
 // make session / user data available to templates
 app.use((req, res, next) => {
-    res.locals.title = 'Revelry Supply';
-    res.locals.user = req.session.user;
+    res.locals.currentUser = req.session.userId;
     next();
 });
 
@@ -51,6 +50,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+    console.log(req.session);
+    next();
+});
 
 // route config
 app.use('/', index);

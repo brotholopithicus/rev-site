@@ -11,7 +11,9 @@ nav.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse.fixed-top
             a.nav-item.nav-link(href='/exploits') Exploits
             a.nav-item.nav-link(href='/locations') Locations
             a.nav-item.nav-link(href='/cart') Cart
-            if !user
-                a.nav-item.nav-link(href='/login') Login / Register
+            if !currentUser
+                a.nav-item.nav-link(href='/login') Login
+                a.nav-item.nav-link(href='/signup') Signup
             else
                 a.nav-item.nav-link(href='/profile') Profile
+                a.nav-item.nav-link(href='/logout') Logout
