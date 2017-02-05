@@ -5,6 +5,8 @@ const productSubtitle = document.querySelector('#productSubtitle');
 const productAdditional = document.querySelector('#additional');
 const listOne = document.querySelector('#listOne');
 const listTwo = document.querySelector('#listTwo');
+const addToCartProductInput = document.querySelector('#addToCartProductInput');
+const addToCartColorInput = document.querySelector('#addToCartColorInput');
 const otherColors = document.querySelector('.other-colors');
 
 const product = {
@@ -17,11 +19,12 @@ const colorImage = document.querySelector('#productImage');
 fetch(`/api/products/${product.name}`).then(
     productName => {
         productName.json().then(result => {
-            if(productData) productData.textContent = JSON.stringify(result);
+            if (productData) productData.textContent = JSON.stringify(result);
             productHeader.textContent = result.name;
             productTitle.textContent = result.title;
             productAdditional.textContent = result.additional;
             productSubtitle.textContent = result.subtitle;
+            addToCartProductInput.value = result.tagName;
             result.details.forEach(detail => {
                 let el = document.createElement('li');
                 el.textContent = detail;
@@ -31,6 +34,7 @@ fetch(`/api/products/${product.name}`).then(
             listOne.style.borderRight = '4px solid #000';
             result.colors.forEach(color => {
                 if (color.color === product.color) {
+                    addToCartColorInput.value = color.color;
                     colorHeader.textContent = color.name;
                     let imgData = arrayBufferToBase64(color.buffer.data);
                     colorImage.src = imgData;
@@ -54,6 +58,7 @@ function handleChangeColor(e) {
         .then(res => {
             res.json()
                 .then(color => {
+                    addToCartColorInput.value = color.color;
                     let imgData = arrayBufferToBase64(color.buffer.data);
                     colorImage.src = imgData;
                     colorHeader.textContent = color.name;

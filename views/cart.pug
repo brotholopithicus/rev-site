@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    mixin cartItem(item)
+        li.cartItem(id=item.name)
+            h1= item.name.toUpperCase() + ' - ' + item.color.toUpperCase()
+            form(method='PUT', action='/cart')
+              input(type='text', name='productName', style='display: none;')
+              input(type='text', name='productColor', style='display: none;')
+              input(type='submit', value=' X ')
+    ul
+        each item in cart
+            +cartItem(item)

@@ -34,7 +34,9 @@ app.use(session({
 
 // make session / user data available to templates
 app.use((req, res, next) => {
+    res.locals.title = 'Revelry Supply';
     res.locals.currentUser = req.session.userId;
+    req.session.cart = req.session.cart || [];
     next();
 });
 
@@ -49,11 +51,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use((req, res, next) => {
-    console.log(req.session);
-    next();
-});
 
 // route config
 app.use('/', index);

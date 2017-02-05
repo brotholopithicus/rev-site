@@ -3,10 +3,14 @@ const Schema = mongoose.Schema;
 const passwords = require('../mid').passwords;
 
 const userSchema = Schema({
-    name: { type: String },
-    username: { type: String, required: true, trim: true },
+    name: String,
+    username: { type: String, required: true, trim: true, unique: true },
     password: { type: String, required: true },
-    isAdmin: { type: Boolean, default: false }
+    admin: { type: Boolean, default: false },
+    cart: [{
+      name: String,
+      color: String
+    }]
 });
 
 userSchema.pre('save', function(next) {

@@ -17,6 +17,11 @@ block content
             #productDetailsList
               ul#listOne
               ul#listTwo
+            form(method='POST', action='/cart')
+              input(type='text', id='addToCartProductInput', name='productName', style='display: none;')
+              input(type='text', id='addToCartColorInput', name='productColor', style='display: none;')  
+              input(type='submit', value='Add to Cart', style='cursor: pointer;')
+
     hr
     .other-colors
     hr
