@@ -1,9 +1,12 @@
+// generate express router object
 var express = require('express');
 var router = express.Router();
 
+// import mongoose models
 const Product = require('../models/Product');
 const User = require('../models/User');
 
+// import middleware
 const mid = require('../mid');
 
 /* GET home page. */
@@ -13,72 +16,20 @@ router.get('/', (req, res, next) => {
 
 /* GET logout page. */
 router.get('/logout', mid.isLoggedIn, (req, res, next) => {
-    if (req.session) {
-        req.session.destroy(err => {
-            if (err) return next(err);
-            return res.redirect('/');
-        });
-    }
+    // destroy session object and redirect home
+    req.session.destroy(err => {
+        if (err) return next(err);
+        return res.redirect('/');
+    });
 });
 
 /* GET profile page. */
 router.get('/profile', mid.isLoggedIn, (req, res, next) => {
+    // find user by session-stored user id and render profile page
     User.findById(req.session.userId, (err, user) => {
         if (err) return next(err);
         return res.render('profile', { username: user.username });
     });
-});
-
-/* GET cart page. */
-router.get('/cart', (req, res, next) => {
-    if (req.session.userId) {
-        User.findById(req.session.userId, (err, user) => {
-            if (err) return next(err);
-            if (!user) return res.render('cart', { cart: req.session.cart });
-            return res.render('cart', { cart: user.cart });
-        });
-    } else {
-        return res.render('cart', { cart: req.session.cart });
-    }
-});
-
-/* POST cart. */
-router.post('/cart', (req, res, next) => {
-    let product = { name: req.body.productName, color: req.body.productColor };
-    if (product.name && product.color) {
-        req.session.cart.push(product);
-        if (req.session.userId) {
-            User.findById(req.session.userId, (err, user) => {
-                if (err) return next(err);
-                user.cart.push(product);
-                user.save();
-            });
-        }
-        return res.redirect('/cart');
-    } else {
-        let err = new Error('How can you add something to your cart if you\'re not adding something to your cart?');
-        err.status = 405;
-        return next(err);
-    }
-});
-
-/* PUT update cart. */
-router.put('/cart', (req, res, next) => {
-  console.log(req.bod);
-  let name = req.body.productName;
-  let color = req.body.productColor;
-    if (!name || !color) return next();
-    req.session.cart.filter(item => {
-        return item !== { name, color }
-    });
-    if (req.session.userId) {
-        User.findById(req.session.userId, (err, user) => {
-            if (err) return next(err);
-            user.cart = req.session.cart;
-            user.save();
-        });
-    }
-    return res.redirect('/cart');
 });
 
 /* GET exploits page. */
@@ -88,8 +39,7 @@ router.get('/exploits', (req, res, next) => {
 
 /* GET exploit page. */
 router.get('/exploit/:exploit', (req, res, next) => {
-    let exploit = req.params.exploit;
-    res.render('exploit', { exploit });
+    res.render('exploit', { exploit: req.params.exploit });
 });
 
 /* GET legal page. */
@@ -133,6 +83,7 @@ router.post('/login', mid.isLoggedOut, (req, res, next) => {
         return next(err);
     }
 });
+
 /* GET signup page. */
 router.get('/signup', mid.isLoggedOut, (req, res, next) => {
     res.render('users/signup');
@@ -161,4 +112,73 @@ router.post('/signup', mid.isLoggedOut, (req, res, next) => {
         return next(err);
     }
 });
+
+/* GET cart page. */
+router.get('/cart', (req, res, next) => {
+    if (req.session.userId) {
+        User.findById(req.session.userId, (err, user) => {
+            if (err) return next(err);
+            if (!user) return res.render('cart', { cart: req.session.cart });
+            req.session.cart = user.cart;
+            return res.render('cart', { cart: user.cart });
+        });
+    } else {
+        return res.render('cart', { cart: req.session.cart || [] });
+    }
+});
+
+/* POST cart. */
+router.post('/cart', (req, res, next) => {
+    let product = { name: req.body.productName, color: req.body.productColor };
+    if (product.name && product.color) {
+        if (req.session.userId) {
+            User.findById(req.session.userId, (err, user) => {
+                if (err) return next(err);
+                user.cart.push(product);
+                user.save();
+                if (req.session.cart) {
+                    req.session.cart.push(product);
+                } else {
+                    req.session.cart = user.cart;
+                }
+            });
+        } else {
+            if (req.session.cart) {
+                req.session.cart.push(product);
+            } else {
+                req.session.cart = [product];
+            }
+        }
+        return res.redirect('/cart');
+    } else {
+        let err = new Error('How can you add something to your cart if you\'re not adding something to your cart?');
+        err.status = 405;
+        return next(err);
+    }
+});
+
+/* PUT update cart. */
+router.put('/cart', (req, res, next) => {
+    let name = req.body.name;
+    let color = req.body.color;
+    if (!name || !color) {
+        let err = new Error('Something Went Wrong');
+        err.status = 500;
+        return next(err);
+    }
+
+    req.session.cart.splice(req.session.cart.indexOf({ name, color }, 1));
+
+    if (req.session.userId) {
+        User.findById(req.session.userId, (err, user) => {
+            if (err) return next(err);
+            user.cart = req.session.cart;
+            user.save();
+            return res.end();
+        });
+    } else {
+        return res.end();
+    }
+});
+
 module.exports = router;

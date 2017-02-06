@@ -2,12 +2,12 @@ extends layout
 
 block content
     mixin cartItem(item)
-        li.cartItem(id=item.name)
+        li.cartItem(id=item.name, data-color=item.color)
             h1= item.name.toUpperCase() + ' - ' + item.color.toUpperCase()
-            form(method='PUT', action='/cart')
-              input(type='text', name='productName', style='display: none;')
-              input(type='text', name='productColor', style='display: none;')
-              input(type='submit', value=' X ')
-    ul
+            button#removeButton &nbsp;X&nbsp;
+    ul#cart
         each item in cart
             +cartItem(item)
+
+block scripts
+    script(src='/js/cart.js')

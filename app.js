@@ -16,8 +16,12 @@ const api = require('./routes/api');
 const app = express();
 
 // db config
+// local mongo database
 mongoose.connect('mongodb://localhost/revelry');
-// mongoose.connect('mongodb://192.168.1.42/revelry-supply');
+
+// remote mongo database
+// mongoose.connect('mongodb://192.168.1.42/revelry');
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -36,7 +40,7 @@ app.use(session({
 app.use((req, res, next) => {
     res.locals.title = 'Revelry Supply';
     res.locals.currentUser = req.session.userId;
-    req.session.cart = req.session.cart || [];
+    console.log(req.session);
     next();
 });
 
