@@ -25,6 +25,8 @@ function quantityChangeEventHandler(e) {
 
 const addToCartProductInput = document.querySelector('#addToCartProductInput');
 const addToCartColorInput = document.querySelector('#addToCartColorInput');
+const addToCartPriceInput = document.querySelector('#addToCartPriceInput');
+
 const otherColors = document.querySelector('.other-colors');
 
 const product = {
@@ -40,6 +42,8 @@ fetch(`/api/products/${product.name}`).then(
         productName.json().then(result => {
             if (productData) productData.textContent = JSON.stringify(result);
             productPrice.textContent = '$' + result.price.toFixed(2);
+            addToCartPriceInput.value = result.price;
+            console.log(addToCartPriceInput);
             productStock.textContent = productInStock(result.stock);
             productStock.style.backgroundColor = productStockBackground(result.stock);
             productHeader.textContent = result.name;

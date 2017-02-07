@@ -1,14 +1,40 @@
+#cart {
+  padding: 0;
+}
+li.cartItem:nth-child(2n+1) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 li.cartItem {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
 }
-.cartItem h4 {
 
+.cart-item-details {
+  font-size: 26px;
+}
+li.cart-item-header {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+}
+li.cart-item-header > *, li.cartItem > * {
+  flex: 1;
+}
+
+li.cartItem {
+  border-bottom: 1px solid #000;
+  padding: 4px;
 }
 a#removeButton {
-  margin-left: 20px;
   background-color: #e28383;
   color: #fff;
   line-height: 1.8rem;
@@ -22,4 +48,75 @@ a#removeButton {
 
 a#removeButton:hover {
   background-color: #f55858;
+}
+
+.cart-item-quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-quantity button {
+    align-self: stretch;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    width: 32px;
+}
+
+button#decrementButton {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: 0.4s;
+}
+
+button#incrementButton {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    transition: 0.4s;
+}
+
+button#decrementButton:hover {
+    transform: scale(1.05, 1.05);
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+button#incrementButton:hover {
+    transform: scale(1.05, 1.05);
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+input[name='productQuantity'] {
+    text-align: center;
+    width: 40px;
+}
+
+.cart-page-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+a#backToStoreLink, a#checkOutLink {
+    padding: 9px 18px;
+    background-color: rgb(221, 220, 204);
+    border: none;
+    border-radius: 5px;
+    color: #454545;
+}
+
+.cart-item-remove-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cart-item-remove-button a#removeButton {
+  align-self: center;
+}
+
+.cart-item-total {
+  font-size: 28px;
 }

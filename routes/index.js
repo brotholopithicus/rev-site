@@ -132,9 +132,10 @@ router.post('/cart', (req, res, next) => {
     let product = {
         name: req.body.productName,
         color: req.body.productColor,
+        price: req.body.productPrice,
         quantity: parseInt(req.body.productQuantity)
     };
-    if (product.name && product.color && product.quantity) {
+    if (product.name && product.color && product.quantity && product.price) {
 
         function updateCart(query, arr) {
             let filteredCart = arr.filter(item => item.name === query.name && item.color === query.color);

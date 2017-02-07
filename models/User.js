@@ -10,7 +10,8 @@ const userSchema = Schema({
     cart: [{
       name: String,
       color: String,
-      quantity: Number
+      quantity: Number,
+      price: Number
     }]
 });
 

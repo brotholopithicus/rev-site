@@ -23,10 +23,11 @@ block content
             form#addToCartForm(method='POST', action='/cart')
                 input#addToCartProductInput(type='text', name='productName', style='display: none;')
                 input#addToCartColorInput(type='text', name='productColor', style='display: none;')
+                input#addToCartPriceInput(type='text', name='productPrice', style='display: none;')
                 .single-product-quantity
-                  button#decrementButton(data-value='-1') &nbsp;-&nbsp;
-                  input#addToCartQuantityInput(type='text', name='productQuantity', value='1')
-                  button#incrementButton(data-value='1') &nbsp;+&nbsp;
+                    button#decrementButton(data-value='-1') &nbsp;-&nbsp;
+                    input#addToCartQuantityInput(type='text', name='productQuantity', value='1')
+                    button#incrementButton(data-value='1') &nbsp;+&nbsp;
                 input#addToCartButton(type='submit', value='Add to Cart', style='cursor: pointer;')
 
     hr

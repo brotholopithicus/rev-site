@@ -31,6 +31,29 @@ function setActiveTab(product) {
     filter(product.dataset.product);
 }
 
+function filter(product) {
+    document.querySelectorAll('.product-wrapper').forEach(wrapper => {
+        if (product === 'all') {
+            wrapper.classList.remove('hidden');
+            wrapper.classList.remove('active');
+        } else if (wrapper.id === product) {
+            if (wrapper.classList.contains('hidden')) {
+                wrapper.classList.remove('hidden');
+            }
+            if (!wrapper.classList.contains('active')) {
+                wrapper.classList.add('active');
+            }
+        } else {
+            if (!wrapper.classList.contains('hidden')) {
+                wrapper.classList.add('hidden');
+            }
+            if (wrapper.classList.contains('active')) {
+                wrapper.classList.remove('active');
+            }
+        }
+    });
+}
+
 function titleCase(str) {
     let titleStr = str
         .toLowerCase()

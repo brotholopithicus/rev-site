@@ -193,7 +193,7 @@ a:hover {
 }
 
 #main-container {
-    margin-top: 4rem;
+    margin-top: 58px;
 }
 
 .exploits-wrapper {
@@ -220,17 +220,6 @@ a.exploit p {
     margin: 0 auto;
     z-index: 10;
 }
-
-a.exploit:hover {}
-
-a#backToStoreLink {
-    padding: 9px 18px;
-    background-color: rgb(221, 220, 204);
-    border: none;
-    border-radius: 5px;
-    color: #454545;
-}
-
 
 /* =================================
     Media Queries

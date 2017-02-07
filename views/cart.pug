@@ -1,21 +1,35 @@
 extends layout
 
 block stylesheets
-  link(rel='stylesheet', href='/css/cart.css')
+    link(rel='stylesheet', href='/css/cart.css')
 
 block content
-    mixin cartItem(item)
-        li.cartItem(id=item.name, data-color=item.color)
-            - let letter = item.name.split('')[0].toUpperCase()
-            h4= 'The ' + letter + item.name.split('').splice(1, item.name.length).join('') + ' - (' + item.color.toUpperCase() + ') x ' + item.quantity
-            a#removeButton &nbsp;X&nbsp;
-    h1 Shopping Cart
-    hr
-    h4#emptyCartHeader(style='display: none;') There's nothing here... yet.
-    ul#cart
-        each item in cart
-            +cartItem(item)
-    a#backToStoreLink(href='/shop') Back To Store
-
+    - let index = 0;
+        mixin cartItem(item)
+            li.cartItem(id=item.name, data-color=item.color, data-price=item.price)
+                .cart-item-name
+                .cart-item-color
+                .cart-item-quantity
+                    button#decrementButton(data-value='-1') &nbsp;-&nbsp;
+                    input#addToCartQuantityInput(type='text', name='productQuantity', value=item.quantity)
+                    button#incrementButton(data-value='1') &nbsp;+&nbsp;
+                .cart-item-price
+                .cart-item-remove-button
+                    a#removeButton &nbsp;X&nbsp;
+        h4#emptyCartHeader &nbsp;
+        ul#cart
+            li.cart-item-header
+                span Product
+                span Color
+                span Quantity
+                span Price
+                span Remove
+            each item in cart
+                +cartItem(item)
+                - index++
+        .cart-page-actions
+            a#backToStoreLink(href='/shop') Back To Store
+            .cart-item-total
+            a#checkOutLink(href='/checkout') Check Out
 block scripts
     script(src='/js/cart.js')
