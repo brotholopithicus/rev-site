@@ -1,10 +1,28 @@
 const productData = document.querySelector('.productData');
 const productHeader = document.querySelector('#productName');
+const productPrice = document.querySelector('#productPrice');
+const productStock = document.querySelector('#productStock');
 const productTitle = document.querySelector('#productTitle');
 const productSubtitle = document.querySelector('#productSubtitle');
 const productAdditional = document.querySelector('#additional');
 const listOne = document.querySelector('#listOne');
 const listTwo = document.querySelector('#listTwo');
+
+const productQuantity = document.querySelector('#addToCartQuantityInput');
+const decrementButton = document.querySelector('#decrementButton');
+const incrementButton = document.querySelector('#incrementButton');
+let quantityChangeButtons = [decrementButton, incrementButton];
+quantityChangeButtons.forEach(button => button.addEventListener('click', quantityChangeEventHandler));
+
+function quantityChangeEventHandler(e) {
+    e.preventDefault();
+    let delta = parseInt(e.target.dataset.value);
+    let curr = parseInt(productQuantity.value);
+    let result = curr + delta;
+    if (result < 0) return;
+    productQuantity.value = result;
+}
+
 const addToCartProductInput = document.querySelector('#addToCartProductInput');
 const addToCartColorInput = document.querySelector('#addToCartColorInput');
 const otherColors = document.querySelector('.other-colors');
@@ -16,10 +34,14 @@ const product = {
 
 const colorHeader = document.querySelector('#productColor');
 const colorImage = document.querySelector('#productImage');
+
 fetch(`/api/products/${product.name}`).then(
     productName => {
         productName.json().then(result => {
             if (productData) productData.textContent = JSON.stringify(result);
+            productPrice.textContent = '$' + result.price.toFixed(2);
+            productStock.textContent = productInStock(result.stock);
+            productStock.style.backgroundColor = productStockBackground(result.stock);
             productHeader.textContent = result.name;
             productTitle.textContent = result.title;
             productAdditional.textContent = result.additional;
@@ -64,6 +86,17 @@ function handleChangeColor(e) {
                     colorHeader.textContent = color.name;
                 });
         });
+}
+
+function productInStock(quantity) {
+    // TODO: add switch statement later with more details
+    let message = quantity > 0 ? 'In Stock' : 'Out of Stock';
+    return message;
+}
+
+function productStockBackground(quantity) {
+    if (quantity === 0) return 'rgba(255, 0, 0, 0.7)';
+    return 'rgba(0, 0, 255, 0.7)';
 }
 
 function arrayBufferToBase64(buffer) {

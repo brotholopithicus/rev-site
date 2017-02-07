@@ -15,12 +15,19 @@ block content
             p#productSubtitle
             p#additional
             #productDetailsList
-              ul#listOne
-              ul#listTwo
-            form(method='POST', action='/cart')
-              input(type='text', id='addToCartProductInput', name='productName', style='display: none;')
-              input(type='text', id='addToCartColorInput', name='productColor', style='display: none;')  
-              input(type='submit', value='Add to Cart', style='cursor: pointer;')
+                ul#listOne
+                ul#listTwo
+            .single-product-details
+                span#productPrice
+                span#productStock
+            form#addToCartForm(method='POST', action='/cart')
+                input#addToCartProductInput(type='text', name='productName', style='display: none;')
+                input#addToCartColorInput(type='text', name='productColor', style='display: none;')
+                .single-product-quantity
+                  button#decrementButton(data-value='-1') &nbsp;-&nbsp;
+                  input#addToCartQuantityInput(type='text', name='productQuantity', value='0')
+                  button#incrementButton(data-value='1') &nbsp;+&nbsp;
+                input#addToCartButton(type='submit', value='Add to Cart', style='cursor: pointer;')
 
     hr
     .other-colors
