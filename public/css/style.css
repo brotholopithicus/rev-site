@@ -47,7 +47,7 @@ ul {
 }
 
 .img-links-container a {
-  margin-top: 20px;
+    margin-top: 20px;
     width: 345px;
     height: 325px;
     display: flex;
@@ -78,6 +78,7 @@ ul {
 
 /* ---- Page Elements ---- */
 
+
 /* FOOTER */
 
 .footer-container {
@@ -107,22 +108,26 @@ ul {
     height: 70px;
     margin: 0 auto;
 }
+
 .footer-container .page-bottom {
-  margin-bottom: 0;
-  font-size: 11px;
-  align-self: center;
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-bottom: 0;
+    font-size: 11px;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .page-bottom p {
-  flex: 0 30%;
+    flex: 0 30%;
 }
+
 .footer-container p a:hover {
-  text-shadow: 0 0 5px 4px #000;
+    text-shadow: 0 0 5px 4px #000;
 }
+
 .main-footer {
     width: 100%;
     padding: 20px;
@@ -142,6 +147,8 @@ ul {
         margin: 10px auto;
     }
 }
+
+
 /* END FOOTER */
 
 .links-container {}
@@ -155,12 +162,14 @@ ul {
 }
 
 .social-container a img {
-  height: 55px;
-  transition: 0.4s;
+    height: 55px;
+    transition: 0.4s;
 }
+
 .social-container a img:hover {
-  transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
 }
+
 .social-container a:first-child {
     margin-right: 12px;
 }
@@ -185,40 +194,6 @@ a:hover {
 
 #main-container {
     margin-top: 4rem;
-}
-
-.product-categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.product {
-    border: 1px solid #3d3d3d;
-    border-radius: 4px;
-    display: flex;
-    width: 175px;
-    margin: 4px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.7s;
-}
-
-.product.active {
-    border-color: #000000;
-    background-color: #e6e6e6;
-    color: #000;
-    text-shadow: 0px 1px 0px 4px rgba(0, 0, 0, 0.5);
-}
-
-.product-categories .product p {
-    text-align: center;
-}
-
-.product-categories .product img {
-    margin: 1rem auto;
 }
 
 .exploits-wrapper {
@@ -247,6 +222,14 @@ a.exploit p {
 }
 
 a.exploit:hover {}
+
+a#backToStoreLink {
+    padding: 9px 18px;
+    background-color: rgb(221, 220, 204);
+    border: none;
+    border-radius: 5px;
+    color: #454545;
+}
 
 
 /* =================================

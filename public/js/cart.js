@@ -1,5 +1,7 @@
 const cartContainer = document.querySelector('#cart');
 const removeButton = document.querySelectorAll('#removeButton');
+const emptyCartHeader = document.querySelector('#emptyCartHeader');
+
 if (removeButton) {
     removeButton.forEach(button => {
         button.addEventListener('click', removeButtonClickHandler);
@@ -8,10 +10,8 @@ if (removeButton) {
 
 function removeButtonClickHandler(e) {
     let parentEl = e.target.parentNode;
-    // remove el from DOM
     let cartItem = document.querySelector(`#${parentEl.id}`);
     cartContainer.removeChild(cartItem);
-    // update server session + database
     let queryData = {
         name: parentEl.id,
         color: parentEl.dataset.color
@@ -20,11 +20,16 @@ function removeButtonClickHandler(e) {
     let body = JSON.stringify(queryData);
     xhr.open('PUT', '/cart');
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-          let data = xhr.responseText;
-          console.log(data);
-        }
-    }
     xhr.send(body);
+    updateOnEmptyCart();
 }
+
+function updateOnEmptyCart() {
+    if (cartContainer.children.length > 0) {
+        emptyCartHeader.style.display = 'none';
+    } else {
+        emptyCartHeader.style.display = '';
+    }
+}
+
+updateOnEmptyCart();

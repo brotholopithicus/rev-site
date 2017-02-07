@@ -1,13 +1,21 @@
 extends layout
 
+block stylesheets
+  link(rel='stylesheet', href='/css/cart.css')
+
 block content
     mixin cartItem(item)
         li.cartItem(id=item.name, data-color=item.color)
-            h4= `${item.name} - ${item.color} [${item.quantity}]`
-            button#removeButton &nbsp;X&nbsp;
+            - let letter = item.name.split('')[0].toUpperCase()
+            h4= 'The ' + letter + item.name.split('').splice(1, item.name.length).join('') + ' - (' + item.color.toUpperCase() + ') x ' + item.quantity
+            a#removeButton &nbsp;X&nbsp;
+    h1 Shopping Cart
+    hr
+    h4#emptyCartHeader(style='display: none;') There's nothing here... yet.
     ul#cart
         each item in cart
             +cartItem(item)
+    a#backToStoreLink(href='/shop') Back To Store
 
 block scripts
     script(src='/js/cart.js')
