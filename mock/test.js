@@ -1,20 +1,17 @@
-// const fs = require('fs');
-// fs.readFile(__dirname + '/img/continental/black.jpg', (err, file) => {
-//     fs.writeFile('./image_orig.jpg', file, (err) => {
-//         if (err) throw err;
-//         console.log('saved!');
-//     });
-//     let base64Image = file.toString('base64');
-//     console.log(base64Image);
-//     let decodedImage = new Buffer(base64Image, 'base64');
-//     fs.writeFile('./image_decoded.jpg', decodedImage, (err) => {
-//         if (err) throw err;
-//         console.log('saved!');
-//     });
-// });
+const fs = require('fs');
+let cart = fs.readFileSync(__dirname + '/cart.json', 'utf8');
+cart = JSON.parse(cart);
+const product = { name: 'confidant', color: 'magenta', quantity: 4 };
 
-function err(error) {
-    console.log(error);
+function updateQuantity(query, arr) {
+    let filteredCart = arr.filter(item => item.name === query.name && item.color === query.color);
+    if (filteredCart.length > 0) {
+        parseInt(arr[arr.indexOf(filteredCart[0])].quantity) += parseInt(query.quantity);
+    } else {
+        arr.push(query);
+    }
+    return arr;
 }
-let a = !true;
-err(a ? a : new Error('askdjaslk'));
+
+let res = updateQuantity(product, cart);
+console.log(res);

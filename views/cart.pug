@@ -3,7 +3,7 @@ extends layout
 block content
     mixin cartItem(item)
         li.cartItem(id=item.name, data-color=item.color)
-            h1= item.name.toUpperCase() + ' - ' + item.color.toUpperCase()
+            h4= `${item.name} - ${item.color} [${item.quantity}]`
             button#removeButton &nbsp;X&nbsp;
     ul#cart
         each item in cart

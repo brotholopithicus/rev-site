@@ -129,26 +129,34 @@ router.get('/cart', (req, res, next) => {
 
 /* POST cart. */
 router.post('/cart', (req, res, next) => {
-    let product = { name: req.body.productName, color: req.body.productColor };
-    if (product.name && product.color) {
+    let product = {
+        name: req.body.productName,
+        color: req.body.productColor,
+        quantity: parseInt(req.body.productQuantity)
+    };
+    if (product.name && product.color && product.quantity) {
+
+        function updateCart(query, arr) {
+            let filteredCart = arr.filter(item => item.name === query.name && item.color === query.color);
+            if (filteredCart.length > 0) {
+                arr[arr.indexOf(filteredCart[0])].quantity += query.quantity;
+            } else {
+                arr.push(query);
+            }
+            return arr;
+        }
+
         if (req.session.userId) {
             User.findById(req.session.userId, (err, user) => {
                 if (err) return next(err);
-                user.cart.push(product);
+                user.cart = updateCart(product, user.cart);
                 user.save();
-                if (req.session.cart) {
-                    req.session.cart.push(product);
-                } else {
-                    req.session.cart = user.cart;
-                }
+                req.session.cart = user.cart;
             });
         } else {
-            if (req.session.cart) {
-                req.session.cart.push(product);
-            } else {
-                req.session.cart = [product];
-            }
+            req.session.cart = updateCart(product, req.session.cart || []);
         }
+
         return res.redirect('/cart');
     } else {
         let err = new Error('How can you add something to your cart if you\'re not adding something to your cart?');

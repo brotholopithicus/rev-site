@@ -1,0 +1,26 @@
+[{
+    "name": "accomplice",
+    "color": "silver",
+    "quantity": 1,
+    "_id": "5899fd6ff0551c0cee40c6ff"
+}, {
+    "name": "continental",
+    "color": "striped_grey",
+    "quantity": 4,
+    "_id": "5899fd75f0551c0cee40c700"
+}, {
+    "name": "escort",
+    "color": "green",
+    "quantity": 1,
+    "_id": "5899fd7af0551c0cee40c701"
+}, {
+    "name": "confidant",
+    "color": "light_grey",
+    "quantity": 2,
+    "_id": "5899fd81f0551c0cee40c702"
+}, {
+    "name": "confidant",
+    "color": "green",
+    "quantity": 5,
+    "_id": "5899fd87f0551c0cee40c703"
+}]

@@ -9,7 +9,8 @@ const userSchema = Schema({
     admin: { type: Boolean, default: false },
     cart: [{
       name: String,
-      color: String
+      color: String,
+      quantity: Number
     }]
 });
 

@@ -19,7 +19,7 @@ function quantityChangeEventHandler(e) {
     let delta = parseInt(e.target.dataset.value);
     let curr = parseInt(productQuantity.value);
     let result = curr + delta;
-    if (result < 0) return;
+    if (result < 1) return;
     productQuantity.value = result;
 }
 
