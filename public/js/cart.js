@@ -1,116 +1,49 @@
-const cartContainer = document.querySelector('#cart');
-const removeButton = document.querySelectorAll('#removeButton');
-const emptyCartHeader = document.querySelector('#emptyCartHeader');
-const cartItems = document.querySelectorAll('.cartItem');
-const cartItemNames = document.querySelectorAll('.cart-item-name');
-const cartItemColors = document.querySelectorAll('.cart-item-color');
-const cartItemTotal = document.querySelector('.cart-item-total');
-
-// adjust quantity
-const productQuantities = document.querySelectorAll('#addToCartQuantityInput');
-const quantityChangeButtons = [document.querySelectorAll('#incrementButton'), document.querySelectorAll('#decrementButton')];
-quantityChangeButtons.forEach(buttonType => {
-    buttonType.forEach(button => {
-        button.addEventListener('click', quantityChangeEventHandler);
-    });
+// cart.ctrl.js
+/* ~~~~~~ display cart ~~~~~~ */
+const cart = document.querySelector('#cart');
+// format item data
+const itemNames = document.querySelectorAll('.cart-item-name');
+const itemColors = document.querySelectorAll('.cart-item-color');
+Array.from(itemNames).concat(Array.from(itemColors)).forEach(el => {
+    el.textContent = formatDisplayName(el.textContent);
 });
 
-function quantityChangeEventHandler(e) {
-    e.preventDefault();
-    let productQuantity = e.target.parentNode.children[1];
-    let totalPrice = e.target.parentNode.parentNode.children[3];
-    let price = e.target.parentNode.parentNode.dataset.price;
-    let delta = parseInt(e.target.dataset.value);
-    let curr = parseInt(productQuantity.value);
-    let result = curr + delta;
-    if (result < 1) return;
-    productQuantity.value = result;
-    totalPrice.textContent = '$' + (result * price).toFixed(2);
-    adjustTotal();
+function titleCase(str) {
+    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
 }
 
-if (removeButton) {
-    removeButton.forEach(button => {
-        button.addEventListener('click', removeButtonClickHandler);
-    });
-}
-
-function verifyNode(el, test) {
-    if (el.classList.contains(test)) {
-        return el;
-    } else if (el.parentNode.classList.contains(test)) {
-        return el.parentNode;
+function formatDisplayName(str) {
+    let hyphen = str.split('').includes('-');
+    let underscore = str.split('').includes('_');
+    if (hyphen || underscore) {
+        let arr = str.split(/([-]|[_])/);
+        return titleCase(arr[0]) + ' ' + titleCase(arr[2]);
     } else {
-        verifyNode(el.parentNode, test);
+        return titleCase(str);
     }
 }
 
-function removeButtonClickHandler(e) {
-    let parentEl = verifyNode(e.target.parentNode, 'cartItem');
-    let cartItem = document.querySelector(`#${parentEl.id}`);
-    cartContainer.removeChild(cartItem);
-    let queryData = {
-        name: parentEl.id,
-        color: parentEl.dataset.color
-    };
+// update item totals on quantity change
+// decrement/increment buttons
+// text input
+// display cart total on page load
+// update cart total on item quantity change
+// remove item event handler
+const removeItemButtons = document.querySelectorAll('#removeButton');
+removeItemButtons.forEach(button => button.addEventListener('click', removeItemClickHandler));
+
+function removeItemClickHandler(e) {
+    let parentNode = e.target.closest('.cartItem');
+    let data = {
+        name: parentNode.dataset.name,
+        color: parentNode.dataset.color
+    }
+
     let xhr = new XMLHttpRequest();
-    let body = JSON.stringify(queryData);
+    let body = JSON.stringify(data);
     xhr.open('PUT', '/cart');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(body);
-    updateOnEmptyCart();
-    adjustTotal();
+
+    cart.removeChild(parentNode);
 }
-
-const updateOnEmptyCart = () => {
-    if (cartContainer.children.length > 1) {
-        emptyCartHeader.innerHTML = '&nbsp;';
-    } else {
-        emptyCartHeader.textContent = `There's nothing here... yet.`;
-    }
-}
-
-updateOnEmptyCart();
-
-cartItemNames.forEach(el => {
-    let name = el.parentNode.id;
-    let displayName;
-    if (name.split('').includes('-')) {
-        let arr = name.split('-');
-        displayName = formatName(arr[0]) + '-' + formatName(arr[1]);
-    } else {
-        displayName = formatName(name);
-    }
-    el.textContent = 'The ' + displayName;
-});
-
-cartItemColors.forEach(el => {
-    let color = el.parentNode.dataset.color;
-    el.textContent = formatName(color);
-});
-let cartItemPrices = document.querySelectorAll('.cart-item-price');
-cartItemPrices.forEach(el => {
-    el.textContent = '$' + parseInt(el.parentNode.dataset.price).toFixed(2);
-});
-
-function formatName(name) {
-    return name.charAt(0).toUpperCase() + name.substr(1).toLowerCase();
-}
-
-function calculateTotalPrice() {
-    let total = 0;
-    cartItemPrices = document.querySelectorAll('.cart-item-price');
-    cartItemPrices.forEach(el => {
-        let val = parseInt(el.textContent.substr(1));
-        total += val;
-    });
-    return total;
-}
-
-function adjustTotal() {
-    let total = calculateTotalPrice();
-    cartItemTotal.textContent = 'Total: $' + total.toFixed(2);
-}
-adjustTotal();
-
-// TODO: quantity input event listeners for change, keyup, keydown, and whatever

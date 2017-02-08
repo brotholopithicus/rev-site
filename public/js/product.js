@@ -66,10 +66,13 @@ fetch(`/api/products/${product.name}`).then(
                     colorImage.src = imgData;
                 } else {
                     let colorDiv = document.createElement('div');
+                    let colorTitle = document.createElement('span');
+                    colorTitle.textContent = color.name;
                     let img = document.createElement('img');
                     let imgData = arrayBufferToBase64(color.buffer.data);
                     img.src = imgData;
                     colorDiv.appendChild(img);
+                    colorDiv.appendChild(colorTitle);
                     colorDiv.style.cursor = 'pointer';
                     colorDiv.addEventListener('click', handleChangeColor.bind(color.color));
                     otherColors.appendChild(colorDiv);

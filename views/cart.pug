@@ -6,14 +6,14 @@ block stylesheets
 block content
     - let index = 0;
         mixin cartItem(item)
-            li.cartItem(id=item.name, data-color=item.color, data-price=item.price)
-                .cart-item-name
-                .cart-item-color
+            li.cartItem(data-index=index, data-name=item.name, data-color=item.color, data-price=item.price)
+                .cart-item-name= item.name
+                .cart-item-color= item.color
                 .cart-item-quantity
                     button#decrementButton(data-value='-1') &nbsp;-&nbsp;
                     input#addToCartQuantityInput(type='text', name='productQuantity', value=item.quantity)
                     button#incrementButton(data-value='1') &nbsp;+&nbsp;
-                .cart-item-price
+                .cart-item-price= '$' + (item.price * item.quantity).toFixed(2)
                 .cart-item-remove-button
                     a#removeButton &nbsp;X&nbsp;
         h4#emptyCartHeader &nbsp;
