@@ -119,7 +119,6 @@ function adjustTotal() {
 }
 adjustTotal();
 
-// TODO: quantity input event listeners for change, keyup, keydown, and whatever
 productQuantities.forEach(input => {
     input.addEventListener('change', manualQuantityChangeEventHandler);
 });
@@ -131,5 +130,4 @@ function manualQuantityChangeEventHandler(e) {
     let totalPrice = cartItem.children[3];
     totalPrice.textContent = (newQuantity * unitPrice);
     console.log(totalPrice);
-
 }

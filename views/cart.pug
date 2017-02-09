@@ -11,7 +11,7 @@ block content
                 .cart-item-color= item.color
                 .cart-item-quantity
                     button#decrementButton(data-value='-1') &nbsp;-&nbsp;
-                    input#addToCartQuantityInput(type='text', name='productQuantity', value=item.quantity)
+                    input#addToCartQuantityInput(type='text', name='productQuantity', value=item.quantity, data-index=index)
                     button#incrementButton(data-value='1') &nbsp;+&nbsp;
                 .cart-item-price= '$' + (item.price * item.quantity).toFixed(2)
                 .cart-item-remove-button
@@ -29,7 +29,7 @@ block content
                 - index++
         .cart-page-actions
             a#backToStoreLink(href='/shop') Back To Store
-            .cart-item-total
+            .cart-price-total
             a#checkOutLink(href='/checkout') Check Out
 block scripts
     script(src='/js/cart.js')
