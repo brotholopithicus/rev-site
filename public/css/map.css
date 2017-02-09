@@ -1,6 +1,7 @@
 .locations {
     display: flex;
     flex-direction: column-reverse;
+    margin: 0px 40px;
 }
 
 .location-list {
@@ -18,8 +19,16 @@
     padding: 2px;
     font-size: 10px;
     border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-
+.location-list li:first-child {
+  border-top: 1px solid black;
+}
 .location-list li:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -28,22 +37,34 @@
     height: 50vh;
     width: 100%;
 }
-
+a.directions {
+  color: #000;
+  background-color: #9f9f9f;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+a.directions:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 @media(min-width: 1025px) {
     .locations {
         padding: 0;
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
     .location-list {
-        height: 600px;
+        height: calc(100vh - 45px);
         width: 30%;
     }
     .location-list li {
-      padding: 5px;
+      padding: 8px;
+      font-size: 11px;
+    }
+    span.name {
       font-size: 14px;
     }
     #map {
-        height: 600px;
+        height: calc(100vh - 58px);
         width: 70%;
     }
 }

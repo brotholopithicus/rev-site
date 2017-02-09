@@ -123,20 +123,29 @@ function formatDisplayName(str) {
     }
 }
 
+// display empty cart message when cart is empty
+function updateOnEmptyCart() {
+    let emptyCartHeader = document.querySelector('#emptyCartHeader');
+    if (cart.children.length > 1) {
+        emptyCartHeader.innerHTML = '&nbsp;';
+    } else {
+        emptyCartHeader.textContent = `There's nothing here... yet.`;
+    }
+}
+
+
+// initialize total price
 (function() {
     adjustTotalPrice();
+    updateOnEmptyCart();
 })();
 
-/** MUTATION OBSERVER **/
-// const target = document.querySelector('.cart-item-price');
-// const observer = new MutationObserver((mutations) => {
-//     mutations.forEach(mutation => {
-//         console.log(mutation);
-//     });
-// });
-// let config = { attributes: true, childList: true, characterData: true };
-// observer.observe(target, config);
-// const itemPrices = document.querySelectorAll('.cart-item-price');
-// itemPrices.forEach(item => {
-//   observer.observe(item, config);
-// });
+// observe childList and characerData mutations to cart element
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mutation => {
+        console.log(mutation);
+        adjustTotalPrice();
+        updateOnEmptyCart();
+    });
+});
+observer.observe(cart, { childList: true, characterData: true });
