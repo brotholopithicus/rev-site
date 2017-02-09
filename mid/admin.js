@@ -1,9 +1,9 @@
-const User = require('../models/User');
+module.exports = function(req, res, next) {
+    const User = require('../models/User');
+    User.findById(req.session.userId, (err, user) => {
+        if (err) return next(err);
+        if (!user.admin) return next(new Error('Not Authorized'));
+        return next();
 
-module.exports = function(user, callback) {
-    User.findOne({ user }, (err, user) => {
-        if (err) return callback(err, false);
-        if (!user || !user.isAdmin) return callback(new Error('User Not Authorized'), false);
-        return callback(null, true);
     });
 }

@@ -28,6 +28,7 @@ router.get('/profile', mid.isLoggedIn, (req, res, next) => {
     // find user by session-stored user id and render profile page
     User.findById(req.session.userId, (err, user) => {
         if (err) return next(err);
+        if (!user) return res.redirect('/');
         return res.render('profile', { username: user.username });
     });
 });
