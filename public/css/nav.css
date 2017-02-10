@@ -1,52 +1,70 @@
 .nav-container {
-    height: 45px;
     text-transform: uppercase;
-    background-color: #000;
+    background-color: #2d2c2c;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.main-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu-toggle-button {
-    cursor: pointer;
-    color: #fff;
-    align-self: center;
-    font-size: 30px;
-    padding: 0;
-    margin-right: 0.5rem;
+.main-nav h1 {
+    font-family: 'PT Mono';
+    margin: 0;
+    font-size: 1.45em;
 }
 
-.nav-container a {
-    color: #fff;
-}
-
-.logo {
-  margin-left: 1rem;
-  align-self: center;
-}
-.logo a {
-  font-size: 20px;
-}
-.logo img {
-    height: 34px;
+.main-nav h1, .main-nav a, .nav-list a {
+    padding: 10px 15px;
+    color: #f1f1f1;
 }
 
 .nav-list {
-    display: none;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (min-width: 769px) {
-    .menu-toggle-button {
+.nav-list a {
+  font-family: 'PT Sans';
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.nav-list a:hover {
+    background-color: #e0e0e0;
+    color: #3b3b3b;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.nav-toggle:hover {
+    color: #ccc;
+    transform: scale(1.1, 1.1);
+}
+
+@media(min-width: 769px) {
+    .nav-toggle {
         display: none;
     }
-    .nav-list {
-        display: flex;
+    h1.logo {
+        flex: 1;
+        font-size: 3em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #f4f4f4;
+        text-align: center;
     }
-    .nav-list a {
-        margin-right: 1rem;
+    .nav-list {
+        flex-direction: row;
     }
 }
-
-@media (min-width: 1025px) {}

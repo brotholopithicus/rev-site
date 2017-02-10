@@ -7,11 +7,11 @@
 }
 
 body {
+    margin: 0;
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
     line-height: 1.15rem;
-    /* background-color: rgba(102, 102, 102, 0.15); */
-    /* background-color: #c4b3b3; */
+    /*min-height: 100vh;*/
 }
 
 nav a {
@@ -34,6 +34,39 @@ ul {
 
 /* ---- Navigation ---- */
 
+/*.logo {
+    margin: 0;
+    font-size: 1.45em;
+}
+
+.main-nav {
+    margin-top: 5px;
+}
+
+.logo a, .main-nav a {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+.main-nav a {
+    color: #34495e;
+    font-size: 0.9em;
+}
+
+.main-nav a:hover {
+    color: #718daa;
+}
+
+nav.nav-container {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #a2a2a2;
+    background-color: #f4f4f4;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+}
+*/
 
 /* ---- Layout Containers ---- */
 
@@ -193,7 +226,6 @@ a:hover {
 }
 
 #main-container {
-    margin-top: 58px;
     min-height: calc(100vh - 475px);
 }
 
@@ -337,7 +369,7 @@ a.exploit p {
 }
 
 @media (min-width: 1025px) {
-  #main-container {
-    min-height: calc(100vh - 317px);
-  }
+    #main-container {
+        min-height: calc(100vh - 317px);
+    }
 }

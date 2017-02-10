@@ -49,7 +49,9 @@ fetch(`/api/products/${product.name}`).then(
             productHeader.textContent = result.name;
             productTitle.textContent = result.title;
             productAdditional.textContent = result.additional;
+            if (!result.additional) productAdditional.style.display = 'none';
             productSubtitle.textContent = result.subtitle;
+            if (!result.subtitle) productSubtitle.style.display = 'none';
             addToCartProductInput.value = result.tagName;
             result.details.forEach(detail => {
                 let el = document.createElement('li');

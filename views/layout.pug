@@ -2,22 +2,23 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato')
-        link(rel='stylesheet', href='/libs/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato|PT+Mono|PT+Sans')
+        //- link(rel='stylesheet', href='/libs/css/bootstrap.min.css')
         link(rel='stylesheet', href='/css/style.css')
         link(rel='stylesheet', href='/css/nav.css')
 
         block stylesheets
 
     body
-        // include partials/newnav
-        include partials/navbar
+        include partials/newnav
+        // include partials/navbar
+        // include partials/responsiveNav
         .container-fluid#main-container
             block content
 
         include partials/footer
-        script(src='/libs/js/jquery.min.js')
-        script(src='/libs/js/tether.min.js')
-        script(src='/libs/js/bootstrap.min.js')
+        // script(src='/libs/js/jquery.min.js')
+        // script(src='/libs/js/tether.min.js')
+        // script(src='/libs/js/bootstrap.min.js')
         script(src='/js/nav.js')
         block scripts

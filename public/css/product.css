@@ -3,11 +3,11 @@ h1, h2 {
 }
 
 h1#productName {
-    font-size: 34px;
+    font-size: 1.45em;
 }
 
 h2#productColor {
-    font-size: 24px;
+    font-size: 0.9em;
 }
 
 .single-product {
@@ -39,7 +39,6 @@ h2#productColor {
 }
 
 .single-product-text {
-    padding: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,21 +53,26 @@ h2#productColor {
     flex-direction: column;
     align-items: center;
 }
+
 .other-colors div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: 0.4s;
 }
+
 .other-colors div:hover {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 @media (min-width: 1025px) {
     h1#productName {
-        font-size: 64px;
+        font-size: 3em;
+    }
+    h2#productColor {
+        font-size: 2em;
     }
     .single-product {
         flex-direction: row;
@@ -129,13 +133,16 @@ h2#productColor {
     justify-content: center;
 }
 
+.single-product-quantity>* {
+    padding: 4px 8px;
+}
+
 .single-product-quantity button {
     align-self: stretch;
     border: none;
     cursor: pointer;
     outline: none;
     user-select: none;
-    width: 32px;
 }
 
 button#decrementButton {
@@ -164,10 +171,25 @@ input[name='productQuantity'] {
     text-align: center;
     width: 40px;
 }
-a#backToStoreLink {
-  padding: 9px 18px;
-  background-color: rgb(221, 220, 204);
-  border: none;
-  border-radius: 5px;
-  color: #454545;
+
+#backToStoreLink {
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#backToStoreLink a {
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    background-color: rgb(232, 232, 232);
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    transition: 0.2s;
+}
+
+#backToStoreLink a:hover {
+  background-color: rgb(179, 179, 179);
+
 }
