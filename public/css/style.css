@@ -34,6 +34,7 @@ ul {
 
 /* ---- Navigation ---- */
 
+
 /*.logo {
     margin: 0;
     font-size: 1.45em;
@@ -67,6 +68,7 @@ nav.nav-container {
     box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
 */
+
 
 /* ---- Layout Containers ---- */
 
@@ -271,7 +273,7 @@ a.exploit p {
 
 .panel {
     box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
-    color: white;
+    color: tomato;
     text-align: center;
     align-items: center;
     transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
@@ -290,11 +292,11 @@ a.exploit p {
 }
 
 .panel2 {
-    background-image: url(/img/exploit.jpg);
+    background-image: url(/img/shop.jpg);
 }
 
 .panel3 {
-    background-image: url(/img/shop.jpg);
+    background-image: url(/img/exploit.jpg);
 }
 
 
