@@ -1,3 +1,9 @@
+nav {
+  top: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
 .nav-container {
     text-transform: uppercase;
     background-color: #2d2c2c;
@@ -52,6 +58,9 @@
     transform: scale(1.1, 1.1);
 }
 
+.nav-list a.active {
+  background-color: #555;
+}
 @media(min-width: 769px) {
     .nav-toggle {
         display: none;
@@ -67,4 +76,8 @@
     .nav-list {
         flex-direction: row;
     }
+}
+
+body.fixed-nav nav {
+  position: fixed;
 }
