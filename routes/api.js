@@ -4,11 +4,28 @@ const router = express.Router();
 const Product = require('../models/Product');
 const Store = require('../models/Store');
 
+const mid = require('../mid');
+
 /* GET location data. */
 router.get('/locations', (req, res, next) => {
     Store.find((err, stores) => {
         if (err) return next(err);
         return res.json(stores);
+    });
+});
+
+/* POST user coords */
+router.post('/locations', (req, res, next) => {
+    let userCoords = req.body;
+    Store.find({}, (err, stores) => {
+        if (err) return next(err);
+        let sorted = [];
+        stores.forEach(store => {
+            let distance = mid.distance(userCoords, store.coords).toFixed(1);
+            sorted.push({ name: store.name, address: store.address, distance, coords: store.coords });
+        });
+        sorted.sort((a, b) => a.distance - b.distance);
+        return res.json(sorted);
     });
 });
 
