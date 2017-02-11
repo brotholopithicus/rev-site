@@ -6,7 +6,8 @@ module.exports = function(coordOne, coordTwo, radius = 6371) {
         Math.cos(toRad(coordTwo.latitude)) *
         Math.pow(Math.sin(deltalongitude / 2), 2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return radius * c * 0.621371;
+    let kilometersPerMile = 0.621371192;
+    return radius * c * kilometersPerMile;
 }
 
 function toRad(num) {

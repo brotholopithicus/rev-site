@@ -133,7 +133,6 @@ function updateOnEmptyCart() {
     }
 }
 
-
 // initialize total price
 (function() {
     adjustTotalPrice();
