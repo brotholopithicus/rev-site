@@ -61,6 +61,7 @@ nav {
 .nav-list a.active {
   background-color: #555;
 }
+
 @media(min-width: 769px) {
     .nav-toggle {
         display: none;

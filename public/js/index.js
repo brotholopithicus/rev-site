@@ -8,16 +8,16 @@ imageLinks.forEach(imageLink => {
 const panels = document.querySelectorAll('.panel');
 
 function toggleOpen() {
+    this.classList.toggle('open');
     panels.forEach(panel => {
         if (panel !== this) {
             panel.removeEventListener('transitionend', toggleActive);
             panel.classList.remove('open');
             panel.classList.remove('open-active');
         } else {
-            this.classList.toggle('open');
             this.addEventListener('transitionend', toggleActive);
         }
-    });
+    })
 }
 
 function toggleActive(e) {
@@ -26,27 +26,4 @@ function toggleActive(e) {
     }
 }
 
-function resetPanels(exception) {
-    panels.forEach(panel => {
-        panel.classList.remove('open');
-        panel.classList.remove('open-active');
-        panel.addEventListener('transitionend', toggleActive);
-    });
-}
-let index = 0;
-let panelInterval = setInterval(openPanel, 4000);
-
-function openPanel() {
-    toggleOpen.bind(panels[index])();
-    index++;
-    if (index > panels.length - 1) {
-        index = 0;
-    }
-}
-
-function clearPanelInterval() {
-    resetPanels();
-    clearInterval(panelInterval);
-    toggleOpen.apply(this);
-}
-panels.forEach(panel => panel.addEventListener('click', clearPanelInterval));
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));

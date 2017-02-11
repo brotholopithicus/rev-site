@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const express = require('express');
 const router = express.Router();
 
@@ -47,5 +50,6 @@ router.get('/products/:product', (req, res, next) => {
         });
     }
 });
+
 
 module.exports = router;
