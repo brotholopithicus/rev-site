@@ -32,7 +32,8 @@ let colors = [{
     {
         name: 'Crosshatch Grey',
         color: 'grey'
-    }, {
+    },
+    {
         name: 'Light Grey',
         color: 'light_grey'
     },

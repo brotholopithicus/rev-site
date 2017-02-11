@@ -1,0 +1,13 @@
+extends layout
+
+block stylesheets
+    link(rel='stylesheet', href='/css/map.css')
+
+block content
+    .locations
+        .location-list
+            include partials/spinner
+        #map(style='z-index: 0;')
+
+block scripts
+    script(src='/js/newMap.js')

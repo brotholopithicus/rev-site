@@ -51,6 +51,7 @@ router.get('/legal', (req, res, next) => {
 /* GET locations page. */
 router.get('/locations', (req, res, next) => {
     res.render('locations');
+    // res.render('storeLocations');
 });
 
 /* GET shop page. */
