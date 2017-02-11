@@ -4,14 +4,18 @@ block stylesheets
     link(rel='stylesheet', href='/css/login.css')
 
 block content
-    h1 Login
-    form#login-form(method='POST', action='/login')
-        label Username
-        input(type='text', id='username', name='username')
-        label Password
-        input(type='password', id='password', name='password')
-        input(type='submit', value='Submit')
-    .not-registered
-        h4 Not Registered?
-        a(href='/signup') Signup Now!
+    .form-container
+        .form-title
+            h1 Login
+        form#login-form(method='POST', action='/login')
+            .form-item
+                label Username:
+                input(type='text', id='username', name='username')
+            .form-item
+                label Password:
+                input(type='password', id='password', name='password')
+            .form-item
+                a(href='/signup') Not Registered?
+                input(type='submit', value='Submit')
+
 block scripts

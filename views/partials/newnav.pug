@@ -9,4 +9,9 @@ nav.nav-container
         a(href='/exploits') Exploits
         a(href='/locations') Locations
         a(href='/cart') Cart
-        a(href='/login') Login
+        if !currentUser
+            a(href='/login') Login
+        else
+
+            a(href='/profile') Profile
+            a(href='/logout') Logout

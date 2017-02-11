@@ -1,4 +1,4 @@
-5302_GMI_7201GMI4110_GMIRighteousme52.1#ffffff#005bff#81aeff#aac0e7balS otoboRMontserratoirraBatisnaSrgba(52, 101, 185, 0.9)9rgba(86, 167, 213, 0.75)/* =================================
+/* =================================
   Base Element Styles
 ==================================== */
 
@@ -228,7 +228,6 @@ a:hover {
 }
 
 #main-container {
-    margin: 1em;
     min-height: calc(100vh - 475px);
 }
 
@@ -371,6 +370,6 @@ a.exploit p {
 
 @media (min-width: 1025px) {
     #main-container {
-        min-height: calc(100vh - 317px);
+        min-height: calc(100vh - 383px);
     }
 }
