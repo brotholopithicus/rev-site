@@ -77,6 +77,7 @@ router.post('/login', mid.isLoggedOut, (req, res, next) => {
         User.findOne({ username }, (err, user) => {
             if (err || !user) return next(err ? err : new Error('User Not Found'));
             req.session.userId = user._id;
+            if (user.admin) return res.redirect('/admin');
             return res.redirect('/profile');
         });
     } else {

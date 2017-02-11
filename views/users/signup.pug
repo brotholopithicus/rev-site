@@ -1,19 +1,27 @@
 extends ../layout
 
 block stylesheets
-    link(rel='stylesheet', href='/css/signup.css')
+    link(rel='stylesheet', href='/css/form.css')
 
 block content
-    h1 Login
-    form#signup-form(method='POST', action='/signup')
-        label Name
-        input(type='text', id='name', name='name')
-        label Username
-        input(type='text', id='username', name='username')
-        label Password
-        input(type='password', id='password', name='password')
-        label Confirm Password
-        input(type='password', id='confirmPassword', name='confirmPassword')
-        input(type='submit', value='Submit')
+    .form-container
+        .form-title
+            h1 Signup
+        form(method='POST', action='/signup')
+            .form-item
+                label Name
+                input(type='text', id='name', name='name')
+            .form-item
+                label Username
+                input(type='text', id='username', name='username')
+            .form-item
+                label Password
+                input(type='password', id='password', name='password')
+            .form-item
+                label Confirm Password
+                input(type='password', id='confirmPassword', name='confirmPassword')
+            .form-item#submitForm
+                input(type='submit', value='Submit')
 
 block scripts
+    script(src='/js/signup.js')

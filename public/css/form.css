@@ -14,7 +14,7 @@
     font-size: 2em;
 }
 
-form#login-form {
+form {
     width: 100%;
     padding: 2em;
     display: flex;
@@ -24,12 +24,16 @@ form#login-form {
 }
 
 .form-item {
+    border-radius: 4px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    transition: 0.4s;
 }
-
+.form-item.focused {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 .form-item>* {
     font-size: 1.15em;
     margin: 0.2em;
@@ -39,8 +43,11 @@ form#login-form {
     flex: 1;
     text-align: center;
 }
-
-.form-item input[type='text'], .form-item input[type='password'] {
+.form-item input {
+  outline: none;
+  user-select: none;
+}
+.form-item:not(#submitForm) input {
     flex: 2;
     padding: 5px;
     border-radius: 3px;
@@ -48,7 +55,7 @@ form#login-form {
     box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
-.form-item:nth-child(3) {
+.form-item:last-child {
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -56,7 +63,7 @@ form#login-form {
     align-items: center;
 }
 
-.form-item:nth-child(3)>* {
+.form-item:last-child>* {
     flex: 0 1 auto;
     border: none;
     color: #fff;
@@ -69,26 +76,29 @@ form#login-form {
     width: 50%;
 }
 
-.form-item:nth-child(3) input:hover {
+.form-item:last-child input:hover {
     background-color: rgba(33, 128, 217, 1);
 }
 
-.form-item:nth-child(3) a:hover {
+.form-item:last-child a:hover {
     background-color: rgba(135, 25, 25, 1);
 }
 
-.form-item:nth-child(3) input {
+.form-item:last-child input {
     background-color: rgba(33, 128, 217, 0.9);
     align-self: stretch;
 }
 
-.form-item:nth-child(3) a {
+.form-item:last-child a {
     background-color: rgba(135, 25, 25, 0.9);
 }
+
 @media(min-width: 1025px) {
-  .form-container {
-    width: 40vw;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-};
+    .form-container {
+        width: 40vw;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
+;

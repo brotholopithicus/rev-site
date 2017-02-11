@@ -1,21 +1,21 @@
 extends ../layout
 
 block stylesheets
-    link(rel='stylesheet', href='/css/login.css')
+    link(rel='stylesheet', href='/css/form.css')
 
 block content
     .form-container
         .form-title
             h1 Login
-        form#login-form(method='POST', action='/login')
+        form(method='POST', action='/login')
             .form-item
                 label Username:
                 input(type='text', id='username', name='username')
             .form-item
                 label Password:
                 input(type='password', id='password', name='password')
-            .form-item
+            .form-item#submitForm
                 a(href='/signup') Not Registered?
-                input(type='submit', value='Submit')
+                input#submitButton(type='submit', value='Submit')
 
 block scripts
