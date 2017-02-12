@@ -298,6 +298,10 @@ a.exploit p {
     background-image: url(/img/IMG_2035.jpg);
 }
 
+.panel4 {
+    background-image: url(/img/IMG_0794.jpg);
+}
+
 
 /* Flex Items */
 
@@ -331,7 +335,6 @@ a.exploit p {
     font-family: 'Righteous';
     text-transform: uppercase;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    font-size: 1em;
 }
 
 .panel p:nth-child(2) {
@@ -339,17 +342,16 @@ a.exploit p {
 }
 
 .panel p a {
-    font-size: 14px;
-    padding: 6px 28px;
-    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8em;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
+    padding: 0.5em 1em;
     color: #fff;
     transition: 0.2s;
-    border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 .panel p a:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .panel.open {

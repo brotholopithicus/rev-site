@@ -10,7 +10,7 @@ function success(pos) {
     let homeIcon = L.icon({
         iconUrl: '../img/house.png',
         iconSize: [24, 24],
-        iconAnchor: [12, 0]
+        iconAnchor: [12, 12]
     });
 
     let userLocation = L.marker([userCoords.latitude, userCoords.longitude], { icon: homeIcon }).addTo(map).bindPopup('<h6>Current Location</h6>');

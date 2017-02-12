@@ -33,6 +33,11 @@ router.get('/profile', mid.isLoggedIn, (req, res, next) => {
     });
 });
 
+/* GET about page. */
+router.get('/about', (req, res, next) => {
+    res.render('about');
+});
+
 /* GET exploits page. */
 router.get('/exploits', (req, res, next) => {
     res.render('exploits');

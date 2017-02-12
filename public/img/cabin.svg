@@ -1,0 +1,36 @@
+<svg width="460px" height="460px" viewBox="0 0 460 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="wooden" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <path d="M446.112,151.112 C413.919,62.943 329.311,0 230,0 C102.974,0 0,102.975 0,230 C0,330.218 64.105,415.45 153.541,446.967 L446.112,151.112 Z" id="Shape" fill="#096C80"></path>
+            <path d="M230,460 C357.026,460 460,357.025 460,230 C460,202.286 455.096,175.717 446.112,151.112 L365,70 L73.787,367.213 L153.541,446.967 C177.464,455.398 203.193,460 230,460 Z" id="Shape" fill="#064855"></path>
+            <rect id="Rectangle-path" fill="#FFC240" x="315" y="70" width="50" height="100"></rect>
+            <polygon id="Shape" fill="#FF984C" points="68.725 195.749 95 226 240 226 230 58"></polygon>
+            <polygon id="Shape" fill="#FF6E36" points="230 226 365 226 391.275 195.749 230 58"></polygon>
+            <polygon id="Shape" fill="#FFC240" points="95 196 95 256 240 266 230 196"></polygon>
+            <polygon id="Shape" fill="#FFD170" points="95 256 95 316 230 326 230 256"></polygon>
+            <polygon id="Shape" fill="#FFC240" points="95 316 95 376 180 376 230 316"></polygon>
+            <circle id="Oval" fill="#FFD170" cx="95" cy="226" r="30"></circle>
+            <circle id="Oval" fill="#FFE1A0" cx="95" cy="226" r="10"></circle>
+            <circle id="Oval" fill="#FFF0CF" cx="95" cy="286" r="30"></circle>
+            <circle id="Oval" fill="#FFFFFF" cx="95" cy="286" r="10"></circle>
+            <circle id="Oval" fill="#FFD170" cx="95" cy="346" r="30"></circle>
+            <circle id="Oval" fill="#FFE1A0" cx="95" cy="346" r="10"></circle>
+            <polygon id="Shape" fill="#FF984C" points="230 196 230 266 365 256 365 196"></polygon>
+            <polygon id="Shape" fill="#FFC240" points="230 256 230 326 365 316 365 256"></polygon>
+            <polygon id="Shape" fill="#FF984C" points="230 316 280 376 365 376 365 316"></polygon>
+            <circle id="Oval" fill="#FFC240" cx="365" cy="226" r="30"></circle>
+            <circle id="Oval" fill="#FFE1A0" cx="365" cy="226" r="10"></circle>
+            <circle id="Oval" fill="#FFE1A0" cx="365" cy="286" r="30"></circle>
+            <circle id="Oval" fill="#FFFFFF" cx="365" cy="286" r="10"></circle>
+            <circle id="Oval" fill="#FFC240" cx="365" cy="346" r="30"></circle>
+            <circle id="Oval" fill="#FFE1A0" cx="365" cy="346" r="10"></circle>
+            <polygon id="Shape" fill="#FF5347" points="21.99 222.354 35.01 237.646 230.486 71.202 240.502 71.202 230.519 44.798"></polygon>
+            <polygon id="Shape" fill="#FF1909" points="230.519 44.798 230.486 71.202 424.972 237.63 438.028 222.37"></polygon>
+            <polygon id="Shape" fill="#FF5347" points="180 256 230 256 240 316 230 376 180 376"></polygon>
+            <rect id="Rectangle-path" fill="#FF1909" x="230" y="256" width="50" height="120"></rect>
+        </g>
+    </g>
+</svg>

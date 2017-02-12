@@ -1,0 +1,17 @@
+<svg width="376px" height="348px" viewBox="314 71 376 348" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+    <style>
+    path, polyline {
+      fill: #ffb000;
+      stroke: #ffb000;
+    }
+    </style>
+  </defs>
+    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(327.000000, 71.000000)">
+        <path d="M175,80 L300,162 L50,162 L175,80 Z M50,162 L300,162 L300,348 L50,348 L50,162 Z" id="Combined-Shape"></path>
+        <polyline id="Path-2" stroke-width="26" points="0 161.728516 174.80904 49 350 161.728516"></polyline>
+        <path d="M105.504132,65.4928571 L64,92.203125 L64,51.9712054 L64,0 L105.762878,0 L105.762878,65.4928571 L105.504132,65.4928571 Z" id="Combined-Shape"></path>
+    </g>
+</svg>
