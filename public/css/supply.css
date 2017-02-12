@@ -1,0 +1,62 @@
+.supply-container {
+    margin-top: 2em;
+}
+
+.products {
+    line-height: 0.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    margin: 8px;
+    height: 325px;
+    width: 494px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product>* {
+    padding: 0;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)
+}
+
+.product span:nth-child(2) {
+    width: 40%;
+    border-bottom: 1px solid #fff;
+}
+
+.product p:first-child {
+    font-size: 1.75em;
+}
+
+#escort {
+    background-image: url(/img/supply/escort.jpg);
+    background-size: cover;
+}
+
+#around-towner {
+    background-image: url(/img/supply/around-towner.jpg);
+    background-size: cover;
+}
+
+#continental {
+    background-image: url(/img/supply/continental.jpg);
+    background-size: cover;
+}
+
+#confidant {
+    background-image: url(/img/supply/confidant.jpg);
+    background-size: cover;
+}
+
+#accomplice {
+    background-image: url(/img/supply/accomplice.jpg);
+    background-size: cover;
+}

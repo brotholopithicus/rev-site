@@ -38,6 +38,11 @@ router.get('/about', (req, res, next) => {
     res.render('about');
 });
 
+/* GET supply page. */
+router.get('/supply', (req, res, next) => {
+    res.render('supply');
+});
+
 /* GET exploits page. */
 router.get('/exploits', (req, res, next) => {
     res.render('exploits');

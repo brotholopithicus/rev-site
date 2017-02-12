@@ -1,0 +1,32 @@
+extends layout
+
+block stylesheets
+    link(rel='stylesheet', href='/css/supply.css')
+
+block content
+    .supply-container
+        .products
+            a(href='/supply/escort').product#escort
+                p The Escort
+                span
+                p Everyday Backpack
+            a(href='/supply/around-towner').product#around-towner
+                p The Around Towner
+                span
+                p Mid-size Duffle
+            a(href='/supply/continental').product#continental
+                p The Continental
+                span
+                p Our Largest Duffle
+            a(href='/supply/confidant').product#confidant
+                p The Confidant
+                span
+                p Single Pocket Back
+            a(href='/supply/accomplice').product#accomplice
+                p The Accomplice
+                span
+                p Flask with Cigarrette Holder
+
+
+block scripts
+    script(src='/js/supply.js')
