@@ -39,13 +39,11 @@ function onScroll() {
 function checkDimensions() {
     if (window.innerWidth >= 769) {
         navList.style.display = '';
-        window.addEventListener('scroll', onScroll);
     } else {
         navList.style.display = 'none';
-        window.removeEventListener('scroll', onScroll);
     }
 }
-
+window.addEventListener('scroll', onScroll);
 window.addEventListener('resize', checkDimensions);
 
 checkDimensions();

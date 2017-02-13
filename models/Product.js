@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// reviews
+// tag
+// product images
+// product lifestyle images
+// stock
+// price
+// 
 const productSchema = Schema({
     name: String,
     tagName: String,

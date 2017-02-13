@@ -5,6 +5,7 @@ var router = express.Router();
 // import mongoose models
 const Product = require('../models/Product');
 const User = require('../models/User');
+const Supply = require('../models/Supply');
 
 // import middleware
 const mid = require('../mid');
@@ -40,7 +41,15 @@ router.get('/about', (req, res, next) => {
 
 /* GET supply page. */
 router.get('/supply', (req, res, next) => {
-    res.render('supply');
+    res.render('supply/main');
+});
+
+/* GET supply for product page. */
+router.get('/supply/:product', (req, res, next) => {
+    Supply.find({ tag: req.params.product }, (err, product) => {
+        if (err) return next(err);
+        res.render('supply/product', { product: product[0] });
+    });
 });
 
 /* GET exploits page. */

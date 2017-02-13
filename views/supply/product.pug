@@ -1,0 +1,19 @@
+extends ../layout
+
+block stylesheets
+    link(rel='stylesheet', href='/css/supply.css')
+
+block content
+    .supply-product-header
+        h1 The #{product.title}
+    .supply-product-container
+        .img-wrapper
+        p= product.text[0]
+        .large-img-wrapper
+        p= product.text[1]
+        hr
+        .lifestyle-img-wrapper
+        pre= product
+
+block scripts
+    script(src='/js/supply.js')
