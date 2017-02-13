@@ -145,6 +145,7 @@ const observer = new MutationObserver((mutations) => {
         console.log(mutation);
         adjustTotalPrice();
         updateOnEmptyCart();
+        updateNavCart();
     });
 });
 observer.observe(cart, { childList: true, characterData: true });

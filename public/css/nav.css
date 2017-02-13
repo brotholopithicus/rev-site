@@ -1,9 +1,10 @@
 nav {
-  top: 0;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+    top: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
+
 .nav-container {
     text-transform: uppercase;
     background-color: #2d2c2c;
@@ -36,7 +37,7 @@ nav {
 }
 
 .nav-list a {
-  font-family: 'PT Sans';
+    font-family: 'PT Sans';
     width: 100%;
     text-align: center;
     transition: 0.2s;
@@ -59,7 +60,7 @@ nav {
 }
 
 .nav-list a.active {
-  background-color: #555;
+    background-color: #555;
 }
 
 @media(min-width: 769px) {
@@ -80,5 +81,12 @@ nav {
 }
 
 body.fixed-nav nav {
-  position: fixed;
+    position: fixed;
+}
+
+a[href='/cart'] span {
+  margin-left: 5px;
+  background-color: #000;
+  padding: 0.3px 4px;
+  border-radius: 3px;
 }

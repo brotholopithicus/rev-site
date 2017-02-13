@@ -40,6 +40,7 @@ app.use(session({
 app.use((req, res, next) => {
     res.locals.title = 'Revelry Supply';
     res.locals.currentUser = req.session.userId;
+    res.locals.cart = req.session.cart;
     next();
 });
 

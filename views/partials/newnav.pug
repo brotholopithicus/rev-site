@@ -9,7 +9,12 @@ nav.nav-container
         a(href='/exploits') Exploits
         a(href='/supply') Supply
         a(href='/locations') Locations
-        a(href='/cart') Cart
+        if cart
+          a(href='/cart', data-cart=cart) Cart
+        else
+
+          a(href='/cart') Cart
+          
         if !currentUser
             a(href='/login') Login
         else

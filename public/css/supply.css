@@ -1,3 +1,44 @@
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: center;
+}
+.products a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 50%;
+  color: #fff;
+}
+
+#escort {
+    background-image: url(/img/supply/escort.jpg);
+    background-size: cover;
+}
+
+#around-towner {
+    background-image: url(/img/supply/around-towner.jpg);
+    background-size: cover;
+}
+
+#continental {
+    background-image: url(/img/supply/continental.jpg);
+    background-size: cover;
+}
+
+#confidant {
+    background-image: url(/img/supply/confidant.jpg);
+    background-size: cover;
+}
+
+#accomplice {
+    background-image: url(/img/supply/accomplice.jpg);
+    background-size: cover;
+}
+
 .supply-product-header {
     display: flex;
     flex-direction: column;
@@ -52,30 +93,6 @@
 .large-img-wrapper div img {
   height: auto;
   width: 100%;
-}
-#escort {
-    background-image: url(/img/supply/escort.jpg);
-    background-size: cover;
-}
-
-#around-towner {
-    background-image: url(/img/supply/around-towner.jpg);
-    background-size: cover;
-}
-
-#continental {
-    background-image: url(/img/supply/continental.jpg);
-    background-size: cover;
-}
-
-#confidant {
-    background-image: url(/img/supply/confidant.jpg);
-    background-size: cover;
-}
-
-#accomplice {
-    background-image: url(/img/supply/accomplice.jpg);
-    background-size: cover;
 }
 
 @media(min-width: 769px) {
