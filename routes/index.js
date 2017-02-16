@@ -6,6 +6,7 @@ var router = express.Router();
 const Product = require('../models/Product');
 const User = require('../models/User');
 const Supply = require('../models/Supply');
+const newProduct = require('../models/newProduct');
 
 // import middleware
 const mid = require('../mid');
@@ -46,9 +47,13 @@ router.get('/supply', (req, res, next) => {
 
 /* GET supply for product page. */
 router.get('/supply/:product', (req, res, next) => {
-    Supply.findOne({ tag: req.params.product }, (err, product) => {
+    // Supply.findOne({ tag: req.params.product }, (err, product) => {
+    //     if (err) return next(err);
+    //     res.render('supply/product', { product: product });
+    // });
+    newProduct.findOne({ tag: req.params.product }, (err, product) => {
         if (err) return next(err);
-        res.render('supply/product', { product: product });
+        res.render('supply/product', { product });
     });
 });
 

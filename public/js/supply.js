@@ -2,7 +2,12 @@ const imgWrapper = document.querySelector('.img-wrapper');
 // const lifestyleImgWrapper = document.querySelector('.lifestyle-img-wrapper');
 const supplyProductHeader = document.querySelector('.supply-product-header');
 // const largeImageWrapper = document.querySelector('.large-image-wrapper');
-fetch('/api/supply/escort')
+
+function productName() {
+    return window.location.pathname.slice(window.location.pathname.lastIndexOf('/') + 1);
+}
+
+fetch(`/api/supply/${productName()}`)
     .then(res => res.json().then(data => renderImages(data)));
 
 function renderImages(images) {
@@ -12,7 +17,7 @@ function renderImages(images) {
 
 function createLifestyleImage(image) {
     switch (image.tag) {
-        case 'medium':
+        case 'IMG_001':
             let base64ImageData = formatBase64Image(image.data);
             supplyProductHeader.style.background = `url(${base64ImageData})`;
             supplyProductHeader.style.backgroundSize = 'cover';

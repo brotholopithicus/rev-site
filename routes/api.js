@@ -7,6 +7,7 @@ const router = express.Router();
 const Product = require('../models/Product');
 const Store = require('../models/Store');
 const Supply = require('../models/Supply');
+const newProduct = require('../models/newProduct');
 
 const mid = require('../mid');
 
@@ -19,21 +20,25 @@ router.get('/locations', (req, res, next) => {
 });
 
 /* GET supply. */
-
 router.get('/supply/:product', (req, res, next) => {
-    Supply.findOne({ tag: req.params.product }, (err, doc) => {
+    newProduct.findOne({ tag: req.params.product }, (err, doc) => {
         if (err) return next(err);
         let images = {
-            lifestyle: [],
-            product: []
-        };
+            detail: [],
+            product: [],
+            lifestyle: []
+        }
+        doc.images.detail.forEach(image => {
+            let binaryData = mid.imageBuffer(image.data);
+            images.detail.push({ title: image.title, tag: image.tag, data: binaryData });
+        });
         doc.images.lifestyle.forEach(image => {
             let binaryData = mid.imageBuffer(image.data);
-            images.lifestyle.push({ tag: image.tag, data: binaryData });
+            images.lifestyle.push({ title: image.title, tag: image.tag, data: binaryData });
         });
         doc.images.product.forEach(image => {
             let binaryData = mid.imageBuffer(image.data);
-            images.product.push({ tag: image.tag, data: binaryData });
+            images.product.push({ title: image.title, tag: image.tag, data: binaryData });
         });
         return res.json(images);
     });
