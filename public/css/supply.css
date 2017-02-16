@@ -1,17 +1,38 @@
 .products {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: center;
+    text-align: center;
 }
+
 .products a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1 0 50%;
-  color: #fff;
+    font-family: 'Righteous';
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 100%;
+    color: #fff;
+    height: 25vh;
+}
+
+a.product p {
+    margin: 0;
+}
+
+a.product p:first-child {
+    text-transform: uppercase;
+    padding-bottom: 0.2em;
+    border-bottom: 2px solid #fff;
+    font-size: 1.8em;
+}
+
+a.product p:last-child {
+    font-size: 0.8em;
+    font-style: italic;
 }
 
 #escort {
@@ -61,6 +82,8 @@
     text-align: center;
     font-size: 16px;
     line-height: 1.4;
+    font-family: 'Lora';
+    color: #0a0a0a;
 }
 
 .img-wrapper {
@@ -82,20 +105,38 @@
     width: 100%;
 }
 
+.supply-product-container p {
+    font-size: 16px;
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+.fabric-img-wrapper div img {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    max-width: 350px;
+}
+
 .large-img-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .large-img-wrapper div {
-  width: 60vw;
+    width: 60vw;
 }
+
 .large-img-wrapper div img {
-  height: auto;
-  width: 100%;
+    height: auto;
+    width: 100%;
 }
 
 @media(min-width: 769px) {
+    .products a {
+        flex: 1 0 50%;
+        height: 40vh;
+        font-size: 20px;
+    }
     .supply-product-header {
         height: 40vh;
     }
@@ -106,12 +147,21 @@
         max-width: calc(100vw / 6);
     }
     .large-img-wrapper div {
-      width: 30vw;
+        width: 30vw;
     }
 }
 
 @media(min-width: 1025px) {
     .img-wrapper div {
         max-width: calc(100vw / 6);
+    }
+    .supply-product-container p {
+        font-size: 20px;
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .fabric-img-wrapper div img {
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        max-width: 800px;
     }
 }

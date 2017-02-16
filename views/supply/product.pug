@@ -9,11 +9,11 @@ block content
     .supply-product-container
         .img-wrapper
         p= product.text[0]
-        .large-img-wrapper
+        h1 ODOR ABSORBING, WATER RESISTANT
+        .fabric-img-wrapper
         p= product.text[1]
-        hr
-        .lifestyle-img-wrapper
-        pre= product
+        a#store-link(href=`/shop/${product.tag}`) Get The #{product.title} Now
+        .large-img-wrapper
 
 block scripts
     script(src='/js/supply.js')

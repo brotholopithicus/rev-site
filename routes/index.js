@@ -46,9 +46,9 @@ router.get('/supply', (req, res, next) => {
 
 /* GET supply for product page. */
 router.get('/supply/:product', (req, res, next) => {
-    Supply.find({ tag: req.params.product }, (err, product) => {
+    Supply.findOne({ tag: req.params.product }, (err, product) => {
         if (err) return next(err);
-        res.render('supply/product', { product: product[0] });
+        res.render('supply/product', { product: product });
     });
 });
 
