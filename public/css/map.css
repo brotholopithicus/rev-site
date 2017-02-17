@@ -1,7 +1,7 @@
 .locations {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0px 40px;
+    margin: 40px;
 }
 
 .location-list {

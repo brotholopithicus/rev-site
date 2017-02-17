@@ -43,7 +43,6 @@ fetch(`/api/products/${product.name}`).then(
             if (productData) productData.textContent = JSON.stringify(result);
             productPrice.textContent = '$' + result.price.toFixed(2);
             addToCartPriceInput.value = result.price;
-            console.log(addToCartPriceInput);
             productStock.textContent = productInStock(result.stock);
             productStock.style.backgroundColor = productStockBackground(result.stock);
             productHeader.textContent = result.name;
@@ -61,31 +60,34 @@ fetch(`/api/products/${product.name}`).then(
             });
             listOne.style.borderRight = '4px solid #000';
             result.colors.forEach(color => {
+                let colorDiv = document.createElement('div');
+                colorDiv.dataset.color = color.color;
+                let colorTitle = document.createElement('span');
+                colorTitle.textContent = color.name;
+                let img = document.createElement('img');
+                let imgData = arrayBufferToBase64(color.buffer.data);
+                img.src = imgData;
+                colorDiv.appendChild(img);
+                colorDiv.appendChild(colorTitle);
+                colorDiv.style.cursor = 'pointer';
+                colorDiv.addEventListener('click', handleChangeColor);
+                otherColors.appendChild(colorDiv);
                 if (color.color === product.color) {
                     addToCartColorInput.value = color.color;
                     colorHeader.textContent = color.name;
                     let imgData = arrayBufferToBase64(color.buffer.data);
                     colorImage.src = imgData;
-                } else {
-                    let colorDiv = document.createElement('div');
-                    let colorTitle = document.createElement('span');
-                    colorTitle.textContent = color.name;
-                    let img = document.createElement('img');
-                    let imgData = arrayBufferToBase64(color.buffer.data);
-                    img.src = imgData;
-                    colorDiv.appendChild(img);
-                    colorDiv.appendChild(colorTitle);
-                    colorDiv.style.cursor = 'pointer';
-                    colorDiv.addEventListener('click', handleChangeColor.bind(color.color));
-                    otherColors.appendChild(colorDiv);
+                    colorDiv.style.display = 'none';
                 }
             });
         });
     });
 
 function handleChangeColor(e) {
-    window.location.assign(`/shop/${product.name}#${this}`);
-    fetch(`/api/products/${product.name}?color=${this}`)
+    let color = e.target.parentNode.dataset.color;
+    toggleOtherColors(color);
+    window.location.assign(`/shop/${product.name}#${color}`);
+    fetch(`/api/products/${product.name}?color=${color}`)
         .then(res => {
             res.json()
                 .then(color => {
@@ -95,6 +97,16 @@ function handleChangeColor(e) {
                     colorHeader.textContent = color.name;
                 });
         });
+}
+
+function toggleOtherColors(color) {
+    document.querySelectorAll('div[data-color]').forEach(el => {
+        if (el.dataset.color === color) {
+            el.style.display = 'none';
+        } else {
+            el.style.display = '';
+        }
+    });
 }
 
 function productInStock(quantity) {

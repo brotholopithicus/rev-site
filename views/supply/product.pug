@@ -11,10 +11,9 @@ block content
         p= product.details[0]
         h1= product.title
         .fabric-img-wrapper
+            div
+                img(src='/img/fabric.jpeg')
         p= product.details[1]
-        a#store-link(href=`/shop/${product.tag}`) Get #{product.name} Now
-        .large-img-wrapper
-        pre= product
-        
+
 block scripts
     script(src='/js/supply.js')

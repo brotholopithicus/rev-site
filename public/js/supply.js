@@ -22,14 +22,8 @@ function createLifestyleImage(image) {
             supplyProductHeader.style.background = `url(${base64ImageData})`;
             supplyProductHeader.style.backgroundSize = 'cover';
             break;
-        case 'large':
-            createImageElement(image, document.querySelector('.large-img-wrapper'));
-            break;
-        case 'fabric':
-            createImageElement(image, document.querySelector('.fabric-img-wrapper'));
-            break;
         default:
-            createImageElement(image, document.querySelector('.large-img-wrapper'));
+            // createImageElement(image, document.querySelector('.large-img-wrapper'));
             break;
     }
 }
